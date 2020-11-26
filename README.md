@@ -1,9 +1,9 @@
-![supertag logo](logo.gif)
+![supertag logo](logo/logo.gif)
 
 
 Supertag is a tag-based filesystem, written in Rust, for Linux and MacOS. It provides a tag-based view of your files by removing the hierarchy constraints typically imposed on files and folders.
 
-![intersection](docs/images/intersection-opt.gif)
+![intersection](images/intersection-opt.gif)
 
 # Full docs
 
