@@ -20,6 +20,8 @@ addons:
       - osxfuse
 
 before_install:
+    - brew cask info osxfuse
+    - ls -l /usr/local/include/osxfuse
     - ls -l /usr/local/lib/pkgconfig/
     - pkg-config --libs --cflags osxfuse 'osxfuse >= 2.6.0'
 #before_install:
