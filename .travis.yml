@@ -1,12 +1,21 @@
 os:
-    - linux
+  #- linux
+  - osx
 
 language: rust
 
 rust:
-    - 1.47.0
+  - 1.47.0
 
 cache: cargo
 
-before_install:
-    - sudo apt-get -y install libdbus-glib-1-dev libfuse-dev libsqlite3-dev
+addons:
+  homebrew:
+    packages:
+      #- beanstalk
+    casks:
+      - osxfuse
+
+#before_install:
+#    - sudo apt-get update
+#    - sudo apt-get -y install libdbus-glib-1-dev libfuse-dev libsqlite3-dev
