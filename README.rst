@@ -4,11 +4,11 @@
 
 |
 
-.. image:: https://img.shields.io/travis/amoffat/sh/master.svg?style=flat-square
-    :target: https://travis-ci.org/amoffat/sh
+.. image:: https://img.shields.io/travis/amoffat/supertag/master.svg?style=flat-square
+    :target: https://travis-ci.org/amoffat/supertag
     :alt: Build Status
-.. image:: https://img.shields.io/coveralls/amoffat/sh.svg?style=flat-square
-    :target: https://coveralls.io/r/amoffat/sh?branch=master
+.. image:: https://img.shields.io/coveralls/amoffat/supertag.svg?style=flat-square
+    :target: https://coveralls.io/r/amoffat/supertag?branch=master
     :alt: Coverage Status
 
 |
