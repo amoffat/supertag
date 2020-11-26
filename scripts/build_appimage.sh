@@ -8,7 +8,6 @@ version="$2"
 dist="$3"
 supertag="$DIR"/..
 data="$supertag"/data/appimage
-classifiers="$supertag"/classifiers
 signkey="EB19C5A7D839413DC078E074D2D5C7DFE8DA08B1"
 
 cd "$supertag"

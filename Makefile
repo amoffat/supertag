@@ -19,8 +19,3 @@ appimage: release
 .PHONY: appimage-debug
 appimage-debug: debug
 	scripts/build_appimage.sh $(shell pwd)/target/debug/tag $(version) $(shell pwd)/dist
-
-
-.PHONY: docs
-docs:
-	. docs/venv/bin/activate; $(MAKE) -C docs/ clean html
