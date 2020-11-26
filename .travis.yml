@@ -1,0 +1,9 @@
+os:
+    - linux
+
+language: rust
+
+rust:
+    - 1.47.0
+
+cache: cargo
