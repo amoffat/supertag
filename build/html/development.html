@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Development &mdash; Supertag 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/dosis.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="OS-specific behavior" href="os_behavior.html" />
+    <link rel="prev" title="Architecture" href="architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Supertag
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running-tests">Running tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writing-tests">Writing tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supporting-all-usages">Supporting all usages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#when-things-go-wrong">When things go wrong</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cleaning-up-filesystems">Cleaning up filesystems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cla">CLA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="os_behavior.html">OS-specific behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_schema.html">Database Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips_and_tricks.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Supertag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Development</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/development.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="development">
+<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<p>So you’ve decided to tinker with Supertag. Great! Let’s get you set up. First you’ll want to make sure your
+development environment is setup. See <a class="reference internal" href="installation.html#dev-install"><span class="std std-ref">Development Install</span></a>.</p>
+<div class="section" id="running-tests">
+<h2>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h2>
+<p>Running the test suite is easy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scripts/run_tests.sh
+</pre></div>
+</div>
+<p>If you’re on Linux, this runs about ~140 tests and finishes pretty quickly. If you’re on MacOS, I believe it is around
+~170 tests, and is much slower. This is because we have to run with <code class="docutils literal notranslate"><span class="pre">--test-threads=1</span></code></p>
+<p>If a test breaks, and you want to run it individually, run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">STAG_LOG</span><span class="o">=</span><span class="m">1</span> scripts/itest.sh test_photo_faces
+</pre></div>
+</div>
+<p>This runs the <code class="docutils literal notranslate"><span class="pre">test_photo_faces</span></code> test. <code class="docutils literal notranslate"><span class="pre">STAG_LOG=1</span></code> will enable full output logging at the trace level and higher.
+This is necessary for debugging the really tricky bugs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">STAG_LOG=1</span></code> also tee’s the output to <code class="docutils literal notranslate"><span class="pre">./itest.log</span></code>, so you don’t need to less/grep the test output yourself,
+just grep that logging file.</p>
+</div>
+</div>
+<div class="section" id="writing-tests">
+<h2>Writing tests<a class="headerlink" href="#writing-tests" title="Permalink to this headline">¶</a></h2>
+<p>The best advice for writing Supertag tests is to look at the existing tests to see how they work. They’re readable
+and mostly straightforward (as much as they can be).</p>
+<div class="section" id="supporting-all-usages">
+<h3>Supporting all usages<a class="headerlink" href="#supporting-all-usages" title="Permalink to this headline">¶</a></h3>
+<p>As outlined in <a class="reference internal" href="usage.html#usage"><span class="std std-ref">Usage</span></a>, there are 3 different ways of accomplishing most operations. Writing a good test means
+covering these 3 methods. We don’t want new functionality that only works for the file browser GUI, but not the
+commandline, for example.</p>
+<p>To make sure our bases are covered, we use the following pattern: for any given test, you will want to write 3 different
+versions of it, all using the same underlying logic. Here is an example of a real Supertag test that tests that when
+you remove a tag directory, everything works as expected:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">test_rm_tagdir_cli</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">TestResult</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">th</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHelper</span>::<span class="n">new</span><span class="p">(</span><span class="nb">None</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">_test_rm_tagdir</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cp">#[test]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">test_rm_tagdir_manual</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">TestResult</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">th</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHelper</span>::<span class="n">new</span><span class="p">(</span><span class="nb">None</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">th</span><span class="p">.</span><span class="n">symlink_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpMode</span>::<span class="n">MANUAL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">th</span><span class="p">.</span><span class="n">rm_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpMode</span>::<span class="n">MANUAL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">th</span><span class="p">.</span><span class="n">rmdir_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpMode</span>::<span class="n">MANUAL</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">_test_rm_tagdir</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cp">#[test]</span><span class="w"></span>
+<span class="cp">#[cfg(target_os = </span><span class="s">&quot;macos&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">test_rm_tagdir_finder</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">TestResult</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">th</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestHelper</span>::<span class="n">new</span><span class="p">(</span><span class="nb">None</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">th</span><span class="p">.</span><span class="n">symlink_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpMode</span>::<span class="n">FINDER</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">th</span><span class="p">.</span><span class="n">rm_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpMode</span>::<span class="n">FINDER</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">th</span><span class="p">.</span><span class="n">rmdir_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpMode</span>::<span class="n">FINDER</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">_test_rm_tagdir</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="sd">/// Tests removing a leaf tag removes the tag from all of the files in the path intersection</span>
+<span class="k">fn</span> <span class="nf">_test_rm_tagdir</span><span class="p">(</span><span class="n">th</span>: <span class="nc">TestHelper</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">TestResult</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Notice the naming convention used here. We have one function (the last function) that captures the “meat” of the test,
+and it is named <code class="docutils literal notranslate"><span class="pre">_TEST_NAME</span></code>. Then we have 3 ancillary functions (the first 3) and they are named:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TEST_NAME_cli</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEST_NAME_manual</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEST_NAME_finder</span></code></p></li>
+</ul>
+<p>The job of an ancillary test is to instantiate the <code class="docutils literal notranslate"><span class="pre">TestHelper</span></code> struct and then set it up to behave as either a
+the tag binary (<code class="docutils literal notranslate"><span class="pre">OpMode::CLI</span></code>), a manual system program (<code class="docutils literal notranslate"><span class="pre">OpMode::MANUAL</span></code>), or as the MacOS Finder gui
+(<code class="docutils literal notranslate"><span class="pre">OpMode::FINDER</span></code>). Then the ancillary test should call the function that has the meat of the test.</p>
+<p>We set up these behaviors by setting different mode attributes on the <code class="docutils literal notranslate"><span class="pre">TestHelper</span></code>.
+Here is a (currently) complete list of the different modes we can set:</p>
+<dl class="simple">
+<dt>symlink_mode</dt><dd><p>Affects how linking a file to a tag is performed.</p>
+</dd>
+<dt>rmdir_mode</dt><dd><p>Affects how removing a tag or tag group is performed.</p>
+</dd>
+<dt>rm_mode</dt><dd><p>Affects how removing a <em>file</em> in Supertag is performed.</p>
+</dd>
+<dt>mkdir_mode</dt><dd><p>Affects how creating a tag is performed.</p>
+</dd>
+<dt>rename_mode</dt><dd><p>Affects how moving a tag or a file is performed.</p>
+</dd>
+<dt>import_mode</dt><dd><p>Affects how a file is imported into Supertag.</p>
+</dd>
+</dl>
+<p>Each of these modes attempts to behave as if the user performed the action from the tag binary, manually with a
+standard OS binary, or from MacOS Finder. The default behavior for all modes is <code class="docutils literal notranslate"><span class="pre">OpMode::CLI</span></code>, which corresponds to
+the tag binary. Different <code class="docutils literal notranslate"><span class="pre">OpMode</span></code> may result in drastically different behavior, for example, when using
+<code class="docutils literal notranslate"><span class="pre">symlink_mode</span></code>, the following operations are performed:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OpMode::CLI</span></code>: file is linked to tag by calling the <code class="docutils literal notranslate"><span class="pre">supertag::ln</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OpMode::MANUAL</span></code>: file is linked to the tag by calling the <code class="docutils literal notranslate"><span class="pre">ln</span></code> system binary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OpMode::FINDER</span></code>: file is linked to the tag by creating and writing an <span class="xref std std-ref">alias file</span>.</p></li>
+</ul>
+<p>In summary, try to write tests that cover the functionality you’re testing from the different ways it can be used.</p>
+</div>
+<div class="section" id="when-things-go-wrong">
+<h3>When things go wrong<a class="headerlink" href="#when-things-go-wrong" title="Permalink to this headline">¶</a></h3>
+<p>Things can and will go wrong when writing your tests. You can end up in different states that are not good for your
+system, for example: many temporary Supertag filesystems mounted.</p>
+<div class="section" id="cleaning-up-filesystems">
+<h4>Cleaning up filesystems<a class="headerlink" href="#cleaning-up-filesystems" title="Permalink to this headline">¶</a></h4>
+<p>The following script will do its best to kill off zombie Supertag filesystems:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scripts/cleanup_test_mounts.sh
+</pre></div>
+</div>
+<p>It is not perfect, however. For example, as it is based on a specific filesystem naming scheme, in this case
+<code class="docutils literal notranslate"><span class="pre">supertag:itest_col</span></code>, it will not clean up zombie Supertag filesystems from non-test runs. For those, you will need
+to run a force umount directly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo umount -f the_supertag_filesystem_name
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cla">
+<h3>CLA<a class="headerlink" href="#cla" title="Permalink to this headline">¶</a></h3>
+<p>If you’d like to make a contribution back upstream to Supertag, please be aware that we require a <a class="reference external" href="https://s3-us-west-2.amazonaws.com/supertag.ai/cla/index.html">Contributors
+License Agreement</a> (CLA). This is because we
+may offer a dual-licensed version of Supertag in the future.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="os_behavior.html" class="btn btn-neutral float-right" title="OS-specific behavior" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architecture.html" class="btn btn-neutral float-left" title="Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrew Moffat
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

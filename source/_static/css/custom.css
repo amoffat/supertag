@@ -1,0 +1,33 @@
+.wy-nav-content {
+    background-color: white;
+}
+
+.rst-content .toctree-wrapper>p.caption, h1, h2, h3, h4, h5, h6, legend {
+    font-family: 'Dosis', sans-serif;
+}
+
+div.section#supertag h1 {
+    display: none;
+}
+
+.video-container {
+    overflow:hidden;
+    padding-bottom:65.25%;
+    position:relative;
+    height:0;
+    margin: 0 -3.246em 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .video-container {
+        margin: 0 -1.618em 2rem;
+    }
+}
+
+.video-container iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}

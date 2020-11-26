@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Glossary &mdash; Supertag 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/dosis.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="prev" title="Tips &amp; Tricks" href="tips_and_tricks.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Supertag
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os_behavior.html">OS-specific behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_schema.html">Database Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips_and_tricks.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Supertag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Glossary</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/glossary.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary simple">
+<dt id="term-collection">collection</dt><dd><p>An individual top-level Supertag folder. You might have different collections for different broad groups of
+files, for example, <code class="docutils literal notranslate"><span class="pre">MyPhotos</span></code>, or <code class="docutils literal notranslate"><span class="pre">MyDocuments</span></code> or a collection related to all the files in a specific
+project.</p>
+</dd>
+<dt id="term-primary-collection">primary collection</dt><dd><p>When multiple collections are mounted, this is the oldest currently-mounted collection. If a command accepts
+a collection argument, but one is omitted, the primary collection is implied and used.</p>
+</dd>
+<dt id="term-tag">tag</dt><dd><p>A tag is a label applied to a file. Tags show up as directories in a
+<a class="reference internal" href="#term-collection"><span class="xref std std-term">collection</span></a>. Tags are linked to files in a many-to-many relationship: a tag can apply to many files,
+and a file can be labeled with many tags.</p>
+</dd>
+<dt id="term-filedir">filedir</dt><dd><p>A filedir is how you access the intersection of the <a class="reference internal" href="#term-tag"><span class="xref std std-term">tags</span></a> in a path. By default, it is the
+mathematical symbol for set intersection, <code class="docutils literal notranslate"><span class="pre">⋂</span></code></p>
+</dd>
+<dt id="term-manifolder">manifolder</dt><dd><p>The on-disk folder that represents a <a class="reference internal" href="#term-collection"><span class="xref std std-term">collection</span></a>. It is a portmanteau of “manifold” and “folder”, meant
+to capture the idea of being a multidimensional organization of files.</p>
+</dd>
+<dt id="term-intersection">intersection</dt><dd><p>The files inside of a <a class="reference internal" href="#term-filedir"><span class="xref std std-term">filedir</span></a> that represents the set intersection of all of the tags in a
+<a class="reference internal" href="#term-tagpath"><span class="xref std std-term">tagpath</span></a>.</p>
+</dd>
+<dt id="term-tagpath">tagpath</dt><dd><p>A relative path inside of a Supertag <a class="reference internal" href="#term-collection"><span class="xref std std-term">collection</span></a>, containing only tags. For example,
+<code class="docutils literal notranslate"><span class="pre">photos/vacations/seattle/2016</span></code>. It is useful to think about the <a class="reference internal" href="#term-intersection"><span class="xref std std-term">intersection</span></a> of files at a tagpath.</p>
+</dd>
+<dt id="term-tag-group">tag group</dt><dd><p>A tag group is a placeholder for collection of similar tags. For example, you may group all of the photos
+tagged with your friends under the <code class="docutils literal notranslate"><span class="pre">people</span></code> tag. Then, whenever a person tag would be shown, it will show
+<code class="docutils literal notranslate"><span class="pre">people</span></code> instead. This keeps the filesystem from looking overly cluttered.</p>
+</dd>
+<dt id="term-default-collection">default collection</dt><dd><p>The oldest mounted <a class="reference internal" href="#term-collection"><span class="xref std std-term">collection</span></a> that is currently mounted. The default collection is automatically used
+for operations where specifying a specific collection is optional.</p>
+</dd>
+<dt id="term-fully-qualified-symlink">fully-qualified symlink</dt><dd><p>This is a symlink that has the inode and the device id suffixed to the symlink name. You will typically only
+ever see a fully-qualified symlink in the case that there are multiple files with the same base name, in which
+case, Supertag will fully-qualify the symlinks before displaying them, so you can distinguish between the two.</p>
+</dd>
+<dt id="term-pinning">pinning</dt><dd><p>Forcing a <a class="reference internal" href="#term-tagpath"><span class="xref std std-term">tagpath</span></a> to exist even although no files occupy its intersection. This is a useful technique
+when creating tags from a file GUI to tag a file with multiple tags at once.</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tips_and_tricks.html" class="btn btn-neutral float-left" title="Tips &amp; Tricks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrew Moffat
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linking &mdash; Supertag 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/dosis.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Removing tags" href="removing_tags.html" />
+    <link rel="prev" title="Creating tags" href="creating_tags.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Supertag
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">Usage</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mounting.html">Mounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_tags.html">Creating tags</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-browser-gui">File browser GUI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#macos">MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-binary"><code class="docutils literal notranslate"><span class="pre">tag</span></code> binary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ln"><code class="docutils literal notranslate"><span class="pre">ln</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="removing_tags.html">Removing tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merging_tags.html">Merging tags</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config.html">Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os_behavior.html">OS-specific behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database_schema.html">Database Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips_and_tricks.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Supertag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html">Usage</a> &raquo;</li>
+        
+      <li>Linking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/usage/linking.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linking">
+<h1>Linking<a class="headerlink" href="#linking" title="Permalink to this headline">¶</a></h1>
+<p>Linking is how you can <em>manually</em> associate a file with a <a class="reference internal" href="../glossary.html#term-tag"><span class="xref std std-term">tag</span></a>. The process is slightly different depending on
+if you’re using MacOS or Linux, and whether you’re using the commandline, a file browser GUI, or the <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary.
+We’ll cover them all here.</p>
+<div class="section" id="file-browser-gui">
+<h2>File browser GUI<a class="headerlink" href="#file-browser-gui" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="macos">
+<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
+<p>To link a file with Finder, you can drag and drop, but you must hold the option and command keys (⌥ + ⌘) while dropping.
+This will create a link (specifically a <span class="xref std std-ref">MacOS alias</span>) when you drop the file into Supertag:</p>
+</div>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="tag-binary">
+<h2><code class="docutils literal notranslate"><span class="pre">tag</span></code> binary<a class="headerlink" href="#tag-binary" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary is straightforward:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag ln ~/Documents/RustCheatSheet.pdf rust/documents/pdfs/cheet-sheets
+</pre></div>
+</div>
+<p>When no <a class="reference internal" href="../glossary.html#term-collection"><span class="xref std std-term">collection</span></a> is explicitly specified, as above, the <a class="reference internal" href="../glossary.html#term-default-collection"><span class="xref std std-term">default collection</span></a> is used.
+The <a class="reference internal" href="../glossary.html#term-tagpath"><span class="xref std std-term">tagpath</span></a> is then considered relative to that collection. If you wish to specify a collection other than
+the default collection, specify the tagpath as an absolute path.</p>
+<p>Also, the tags do not have to exist, unlike other methods. If Supertag sees that a tag doesn’t exist, it will create
+it for you as part of the linking process.</p>
+</div>
+<div class="section" id="ln">
+<h2><code class="docutils literal notranslate"><span class="pre">ln</span></code><a class="headerlink" href="#ln" title="Permalink to this headline">¶</a></h2>
+<p>Linking a file with <code class="docutils literal notranslate"><span class="pre">ln</span></code> is straightforward and works as expected:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln ~/Documents/RustCheatSheet.pdf /mnt/programming/rust/documents/pdfs/cheat-sheets
+</pre></div>
+</div>
+<p>The above command links <code class="docutils literal notranslate"><span class="pre">RustCheatSheet.pdf</span></code> to the tags <code class="docutils literal notranslate"><span class="pre">rust</span></code>, <code class="docutils literal notranslate"><span class="pre">documents</span></code>, <code class="docutils literal notranslate"><span class="pre">pdfs</span></code>, and <code class="docutils literal notranslate"><span class="pre">cheat-sheets</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">programming</span></code> <a class="reference internal" href="../glossary.html#term-collection"><span class="xref std std-term">collection</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">ln</span></code>, all of the tags you link to <em>must already exist.</em> This might be unexpected, if you’re used to
+using the <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary, which doesn’t have this requirement. In other words, if the tag path in the previous
+example doesn’t exist, you must create it first with <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p /mnt/programming/rust/documents/pdfs/cheat-sheets
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="removing_tags.html" class="btn btn-neutral float-right" title="Removing tags" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="creating_tags.html" class="btn btn-neutral float-left" title="Creating tags" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrew Moffat
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

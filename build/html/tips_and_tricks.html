@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tips &amp; Tricks &mdash; Supertag 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/dosis.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="Database Schema" href="database_schema.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Supertag
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os_behavior.html">OS-specific behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_schema.html">Database Schema</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tips &amp; Tricks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#browsing-the-database">Browsing the database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tag-negations">Tag Negations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tag-group-transparency">Tag Group Transparency</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Supertag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Tips &amp; Tricks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tips_and_tricks.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tips-tricks">
+<h1>Tips &amp; Tricks<a class="headerlink" href="#tips-tricks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="browsing-the-database">
+<h2>Browsing the database<a class="headerlink" href="#browsing-the-database" title="Permalink to this headline">¶</a></h2>
+<p>A portable way to browse the underlying sqlite database is to use the super secret <code class="docutils literal notranslate"><span class="pre">/.supertag</span></code> directory that lives
+in your collection’s mountpoint. Inside, there is a <code class="docutils literal notranslate"><span class="pre">db.sqlite3</span></code> file that you can connect to. See <a class="reference internal" href="database_schema.html#database-schema"><span class="std std-ref">Database Schema</span></a>
+for a detailed listing of each table.</p>
+</div>
+<div class="section" id="tag-negations">
+<h2>Tag Negations<a class="headerlink" href="#tag-negations" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it is useful to list all <span class="xref std std-ref">intersections</span> <em>sans</em> a tag. For example, if you wanted to
+list all files that are <code class="docutils literal notranslate"><span class="pre">photos</span></code>, <code class="docutils literal notranslate"><span class="pre">trips</span></code>, that are <em>not</em> tagged with <code class="docutils literal notranslate"><span class="pre">seattle</span></code>, how would you do it? The answer
+is tag negations:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls photos/trips/-seattle/⋂
+</pre></div>
+</div>
+<p>Simply prepend the <code class="docutils literal notranslate"><span class="pre">-</span></code> character before any tags that you wish to negate from the intersection, and Supertag will
+do the right thing.</p>
+</div>
+<div class="section" id="tag-group-transparency">
+<h2>Tag Group Transparency<a class="headerlink" href="#tag-group-transparency" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference internal" href="glossary.html#term-tag-group"><span class="xref std std-term">tag group</span></a> has “stat transparency” to the tags it contains. What this means is although you cannot always
+see the tags contained by a tag group, you can pretend that they are there. An example will make this more clear.
+Suppose you have the following file structure::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span>
+    <span class="mi">2016</span><span class="o">/</span>
+        <span class="o">...</span>
+    <span class="n">photos</span><span class="o">/</span>
+        <span class="o">...</span>
+    <span class="n">people</span><span class="o">/</span>
+        <span class="n">person</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span>
+        <span class="n">person</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span>
+        <span class="n">person</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Above, <code class="docutils literal notranslate"><span class="pre">people</span></code> is a tag group for the tags <code class="docutils literal notranslate"><span class="pre">person-1</span></code>, <code class="docutils literal notranslate"><span class="pre">person-2</span></code>, and <code class="docutils literal notranslate"><span class="pre">person-3</span></code>. This means that wherever
+one of those tags would appear, the tag group will appear instead. So for example, if there exists an
+<span class="xref std std-ref">intersection</span> between <code class="docutils literal notranslate"><span class="pre">photos</span></code> and <code class="docutils literal notranslate"><span class="pre">person-1</span></code>, listing <code class="docutils literal notranslate"><span class="pre">photos</span></code> will show::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">photos</span><span class="o">/</span>
+    <span class="n">people</span><span class="o">/</span>
+        <span class="n">person</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">people</span></code> is shown as the immediate child of <code class="docutils literal notranslate"><span class="pre">photos</span></code>, because <code class="docutils literal notranslate"><span class="pre">person-1</span></code> would have been listed, but <code class="docutils literal notranslate"><span class="pre">person-1</span></code>
+has a tag group, so the tag group was shown instead.</p>
+<p>However, “stat transparency” means that although <code class="docutils literal notranslate"><span class="pre">person-1</span></code> isn’t the immediate child of <code class="docutils literal notranslate"><span class="pre">photos</span></code>, we can treat it
+as if it was. This means that you can do <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">people/person-1/⋂</span></code> to list the intersection of those two tags, without
+needing to go through the <code class="docutils literal notranslate"><span class="pre">people</span></code> tag group.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="database_schema.html" class="btn btn-neutral float-left" title="Database Schema" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrew Moffat
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

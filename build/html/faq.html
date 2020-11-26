@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ &mdash; Supertag 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/dosis.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Glossary" href="glossary.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Supertag
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os_behavior.html">OS-specific behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_schema.html">Database Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips_and_tricks.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#security">Security</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#is-supertag-safe">Is Supertag safe?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#why-is-ls-so-slow">Why is <code class="docutils literal notranslate"><span class="pre">ls</span></code> so slow?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-is-my-file-browser-using-so-much-cpu">Why is my file browser using so much CPU?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#why-do-i-get-an-error-when-i-drag-and-drop-a-file-into-a-supertag-directory">Why do I get an error when I drag and drop a file into a SuperTag directory?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-type-on-the-commandline">How do I type <code class="docutils literal notranslate"><span class="pre">⋂</span></code> on the commandline?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-can-t-i-search-in-finder">Why can’t I search in Finder?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-can-t-i-save-directly-into-supertag">Why can’t I save directly into SuperTag?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-supertag-track-files-on-multiple-filesystems">Can SuperTag track files on multiple filesystems?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-can-t-i-delete-a-tag-or-a-tagged-file-from-a-file-browser">Why can’t I delete a tag or a tagged file from a file browser?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-happens-when-two-files-of-the-same-name-share-the-same-tags">What happens when two files of the same name share the same tags?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#design">Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#will-windows-be-supported">Will Windows be supported?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-does-supertag-use-symlinks-why-not-hardlinks">Why does SuperTag use symlinks?  Why not hardlinks?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-are-the-tagged-files-in-the-directory-and-not-alongside-the-other-tag-subdirectories">Why are the tagged files in the <code class="docutils literal notranslate"><span class="pre">⋂</span></code> directory, and not alongside the other tag subdirectories?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-are-my-files-in-supertag-sometimes-suffixed-with-and-some-numbers">Why are my files in SuperTag sometimes suffixed with “&#64;” and some numbers?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-isn-t-the-in-the-filename-suffix-a-real-at-character">Why isn’t the “﹫” in the filename suffix a real “at” character?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-didn-t-you-use-the-fuse-crate">Why didn’t you use the fuse crate?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-didn-t-you-use-an-orm-for-the-database">Why didn’t you use an ORM for the database?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#can-it-work-with-dropbox">Can it work with Dropbox?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-you-share-the-supertag-folder-with-others">Can you share the Supertag folder with others?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#will-you-support-other-database-backends">Will you support other database backends?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aren-t-tag-groups-a-hierarchical-structure">Aren’t tag groups a hierarchical structure?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#who-made-your-logo">Who made your logo?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Supertag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>FAQ</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/faq.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="security">
+<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="is-supertag-safe">
+<h3>Is Supertag safe?<a class="headerlink" href="#is-supertag-safe" title="Permalink to this headline">¶</a></h3>
+<p>First and foremost, the standard open source software details apply:</p>
+<ul class="simple">
+<li><p>This software is provided without warranty.</p></li>
+<li><p>The software author or license can not be held liable for any damages inflicted by the software.</p></li>
+</ul>
+<p>I know that doesn’t inspire confidence when trusting your files to SuperTag, so let me elaborate with the following:
+Since all of the files stored in SuperTag are <em>virtual files in a database</em>, and SuperTag
+operates on this database to create/change/remove virtual files, this greatly minimizes any risk to your existing
+files being changed or removed.</p>
+</div>
+</div>
+<div class="section" id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-is-ls-so-slow">
+<h3>Why is <code class="docutils literal notranslate"><span class="pre">ls</span></code> so slow?<a class="headerlink" href="#why-is-ls-so-slow" title="Permalink to this headline">¶</a></h3>
+<p>Some systems will alias <code class="docutils literal notranslate"><span class="pre">ls</span></code> to something like <code class="docutils literal notranslate"><span class="pre">ls='ls</span> <span class="pre">--color=tty'</span></code>, which changes the color of the individual
+symlinks based on whether or not they are broken.  So it will essentially call the fuse <code class="docutils literal notranslate"><span class="pre">readlink</span></code> function on each
+file individually, and this can take a lot of time if there are a lot of files.</p>
+<p>The solution, is to use <code class="docutils literal notranslate"><span class="pre">\ls</span></code>, which will call the <code class="docutils literal notranslate"><span class="pre">ls</span></code> binary unaliased, and avoid doing symlink lookups on each
+file as part of listing the directory. Another solution is to use <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--color=never</span></code>.</p>
+</div>
+<div class="section" id="why-is-my-file-browser-using-so-much-cpu">
+<h3>Why is my file browser using so much CPU?<a class="headerlink" href="#why-is-my-file-browser-using-so-much-cpu" title="Permalink to this headline">¶</a></h3>
+<p>Some GUI file browsers, like Linux’s <a class="reference external" href="https://en.wikipedia.org/wiki/Thunar">Thunar</a> aggressively attempt to index
+the folders that a user is browsing. I believe it is attempting to “look ahead” to cache and collect various metadata
+about the directories. On Supertag, however, this can be…taxing. The reason is clear when you take a moment to think
+about it: Supertag tag directories are dynamically created, and may represent an extraordinarily broad and deep tree,
+when fully walked. Thunar can often never finish walking it, hence the CPU usage.</p>
+<p>Other GUI file browsers, like MacOS’s Finder, can be instructed to not index the Supertag <a class="reference internal" href="glossary.html#term-manifolder"><span class="xref std std-term">manifolder</span></a>, and we
+do our best to provide this instruction, so this doesn’t seem to be an issue on MacOS.</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-do-i-get-an-error-when-i-drag-and-drop-a-file-into-a-supertag-directory">
+<h3>Why do I get an error when I drag and drop a file into a SuperTag directory?<a class="headerlink" href="#why-do-i-get-an-error-when-i-drag-and-drop-a-file-into-a-supertag-directory" title="Permalink to this headline">¶</a></h3>
+<p>SuperTag currently only handles the creation of links/symlinks/aliases.  You cannot currently copy a file directly into
+a SuperTag collection.  Most file browsers allow you to drag and drop a link:</p>
+<ul class="simple">
+<li><p>Linux’s Thunar file browser - hold ctrl+shift as you drag a file into SuperTag</p></li>
+<li><p>MacOS’s Finder - hold Cmd + Option as you drag a file into SuperTag</p></li>
+</ul>
+</div>
+<div class="section" id="how-do-i-type-on-the-commandline">
+<h3>How do I type <code class="docutils literal notranslate"><span class="pre">⋂</span></code> on the commandline?<a class="headerlink" href="#how-do-i-type-on-the-commandline" title="Permalink to this headline">¶</a></h3>
+<p>You can type <code class="docutils literal notranslate"><span class="pre">_</span></code> instead. Although it isn’t listed when you <code class="docutils literal notranslate"><span class="pre">ls</span></code> the directory, Supertag will interpret <code class="docutils literal notranslate"><span class="pre">_</span></code> as <code class="docutils literal notranslate"><span class="pre">⋂</span></code>.</p>
+</div>
+<div class="section" id="why-can-t-i-search-in-finder">
+<h3>Why can’t I search in Finder?<a class="headerlink" href="#why-can-t-i-search-in-finder" title="Permalink to this headline">¶</a></h3>
+<p>Finder searching is currently not added to Supertag.  If you know the name of the file, you can search your regular
+hard drive for it, since Supertag just contains links to those files.  Searching in Supertag is analogous to browsing
+your tag directories to narrower and narrower search results, so filename searching shouldn’t be explicitly necessary.</p>
+</div>
+<div class="section" id="why-can-t-i-save-directly-into-supertag">
+<h3>Why can’t I save directly into SuperTag?<a class="headerlink" href="#why-can-t-i-save-directly-into-supertag" title="Permalink to this headline">¶</a></h3>
+<p>Short answer: There are technical reasons why this is not possible without severe usability degradation.</p>
+<hr class="docutils" />
+<p>Long answer:</p>
+<p>Initially, I wanted the ability to save files directly into SuperTag, without needing to save them somewhere else first
+and link them into SuperTag.  Indeed most of the functionality and automated testing exists for it.  It was
+implemented as the concept of a “managed file”, which means that if you saved a file into SuperTag, SuperTag would figure
+out where that file should really be stored on disk, and create a symlink for you automatically in SuperTag to that
+managed location.  Under the hood, the managed file would live somewhere in your user’s app data directory under a
+hashed path.</p>
+<p>However it turned out that enabling this ability opened up some breaking usability issues.  There are two major
+underlying problems:</p>
+<ol class="arabic simple">
+<li><p>Programs that create files sometimes expect that file name to exist exactly.</p></li>
+<li><p>There’s no way in our filesystem handler code to determine where a copied file comes from.</p></li>
+</ol>
+<p>The first issue is demonstrated in the following scenario:  You download a file in google chrome.  Google chrome
+a <cite>filename.crdownload</cite> temporary file to use as its download buffer.  When it’s done, it wants to move
+<cite>filename.crdownload</cite> to <cite>filename</cite>, but therein lies the problem: a file saved in SuperTag gets the device id and inode
+id suffixed to the filename.  So chrome, even though it had a valid file descriptor to the file it created, is not
+able to find the file by name, because SuperTag has it under a different name.  This causes chrome to think that the
+download process has failed.</p>
+<p>One might think that the solution is to have another <cite>opcache</cite> cache, one that stored a reference from the created name
+to actual name.  This way, when a process goes to look for a specific filename it created, its requests will really be
+proxied to the actual symlink target.  Unfortunately, I don’t believe this would work, because there is no
+deterministic way to clear that entry from the cache, and the longer the entry lives, the more
+problems it can cause.  For example, downloading two files of the same name at two separate times might cause chrome
+to fail on the second time, after seeing the first file existing on disk, because the opcache says it exists.  You
+might think that you can always clear the entry when the <cite>release</cite> FUSE operation is called for that file (signifying
+a <cite>close</cite>), but I don’t believe this is always true, for example, in the case of chrome trying to <cite>rename</cite> the file
+after it has written to it and closed it.</p>
+<p>The second issue is demonstrated by copying a file into SuperTag from a file browser.  If you copy <cite>rust.pdf</cite> to
+<cite>/mnt/myfiles/rust/</cite> and then also copy <cite>rust.pdf</cite> to <cite>/mnt/myfiles/pdfs</cite>, you will have two independent copies of
+<cite>rust.pdf</cite> on your system, in the form of managed files, with two independent symlinks pointing two those two copies.
+This is because the create + write has no access to <em>where</em> the file data is coming from, so it has no way of knowing
+that it came from the same file, and therefore no way to create a single managed file backing two symlinks.  The
+major problem with this is that users will think they are tagging a single file with multiple tags, by dragging and
+dropping into multiple tagdirs, when in actuality, they are creating many independent copies, and editing one won’t
+effect the others.</p>
+<p>Unfortunately there is no way to separate the two issues.  In order to allow users to save files to SuperTag, you must
+enable the <cite>create</cite> handler.  But if you enable the <cite>create</cite> handler, nothing stops them from accidentally creating
+multiple copies of a file without knowing it.  The best course of action, in my mind, unfortunately, is to disable
+creating files directly in SuperTag through managed files, and preserve the consistency of the core SuperTag offering.</p>
+</div>
+<div class="section" id="can-supertag-track-files-on-multiple-filesystems">
+<h3>Can SuperTag track files on multiple filesystems?<a class="headerlink" href="#can-supertag-track-files-on-multiple-filesystems" title="Permalink to this headline">¶</a></h3>
+<p>Yes!  Each file in the SuperTag overlay database is keyed off of (device_id, inode), so you can add files from multiple
+filesystems to one SuperTag mountpoint, and there is no chance for collision.</p>
+</div>
+<div class="section" id="why-can-t-i-delete-a-tag-or-a-tagged-file-from-a-file-browser">
+<h3>Why can’t I delete a tag or a tagged file from a file browser?<a class="headerlink" href="#why-can-t-i-delete-a-tag-or-a-tagged-file-from-a-file-browser" title="Permalink to this headline">¶</a></h3>
+<p>I had to disable unlink and rmdir through the file browser because of delete behavior that can cause some files to be
+untagged.  If you attempted to delete a top level tag directory through a file browser, the expected behavior
+would be to remove that tag from all files, and nothing else.  However, file browsers delete directories recursively,
+depth-first, which means that all of the tagged files inside all of the tag intersections underneath the tag you wish
+to delete, will also be deleted.  This behavior cannot be mitigated against, because SuperTag only sees individual delete
+requests, and does not see the overall recursive delete request initiating them.</p>
+</div>
+<div class="section" id="what-happens-when-two-files-of-the-same-name-share-the-same-tags">
+<h3>What happens when two files of the same name share the same tags?<a class="headerlink" href="#what-happens-when-two-files-of-the-same-name-share-the-same-tags" title="Permalink to this headline">¶</a></h3>
+<p>On collision, symlinks in SuperTag are suffixed with the device id and inode number of the file they point to.
+This prevents all name collisions.</p>
+</div>
+</div>
+<div class="section" id="design">
+<h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="will-windows-be-supported">
+<h3>Will Windows be supported?<a class="headerlink" href="#will-windows-be-supported" title="Permalink to this headline">¶</a></h3>
+<p>It is on the roadmap, but there are substantial technical hurdles to overcome to port the code base to Windows.
+Help in this area is appreciated.</p>
+</div>
+<div class="section" id="why-does-supertag-use-symlinks-why-not-hardlinks">
+<h3>Why does SuperTag use symlinks?  Why not hardlinks?<a class="headerlink" href="#why-does-supertag-use-symlinks-why-not-hardlinks" title="Permalink to this headline">¶</a></h3>
+<p>Hard links cannot be created across devices or mount points (even on the same device).  Since SuperTag is its own
+mountpoint and device, hard links cannot be made from anywhere else onto SuperTag, because that would be a
+cross-device link.</p>
+</div>
+<div class="section" id="why-are-the-tagged-files-in-the-directory-and-not-alongside-the-other-tag-subdirectories">
+<h3>Why are the tagged files in the <code class="docutils literal notranslate"><span class="pre">⋂</span></code> directory, and not alongside the other tag subdirectories?<a class="headerlink" href="#why-are-the-tagged-files-in-the-directory-and-not-alongside-the-other-tag-subdirectories" title="Permalink to this headline">¶</a></h3>
+<p>Originally, that’s the way it was: a SuperTag tag directory contained all of the files tagged by it, and all of the
+intersecting tags as well.  Unfortunately though, when you start tagging a lot of files, these directories get pretty
+big, and it can be difficult to navigate the tags with your shell’s autocomplete.  Imagine you have a top level tag
+<code class="docutils literal notranslate"><span class="pre">code</span></code> that contains every source code file on your system.  If you tried to autocomplete the next level directory,
+say <code class="docutils literal notranslate"><span class="pre">code/rust/</span></code>, it could be very taxing on your system.  It is also difficult to see all of the other tag dirs under
+<code class="docutils literal notranslate"><span class="pre">code/</span></code> because, by default, <code class="docutils literal notranslate"><span class="pre">ls</span></code> sorts alphabetically, not directory-first (although there <em>is</em> a non-default option
+for doing that with <code class="docutils literal notranslate"><span class="pre">ls</span></code>).</p>
+<p>So to make SuperTag easier to use, I relegated all of the intersecting files to the subdirectory, <code class="docutils literal notranslate"><span class="pre">⋂</span></code>.  Now you only
+incur the cost of computing that file intersection, and listing all of those files, when you navigate to that
+subdirectory.  If you don’t like the name of the subdirectory, you can change it via your SuperTag app settings.</p>
+</div>
+<div class="section" id="why-are-my-files-in-supertag-sometimes-suffixed-with-and-some-numbers">
+<h3>Why are my files in SuperTag sometimes suffixed with “&#64;” and some numbers?<a class="headerlink" href="#why-are-my-files-in-supertag-sometimes-suffixed-with-and-some-numbers" title="Permalink to this headline">¶</a></h3>
+<p>This &#64; separates your file name and its target device id and inode number.  These numbers must be embedded in the
+filename itself, for two reasons:</p>
+<ol class="arabic simple">
+<li><p>We have no other way of distinguishing between a tag directory and a file.</p></li>
+</ol>
+<p>Suppose our code receives a request from the FUSE system asking if the path <cite>/docs/test</cite> exists, and what
+type of object it is (directory or symlink).  Is <cite>test</cite> a file, or a tag directory?  What if both exist?
+On most filesystems, a file with the same name as a directory, in the same place, is not allowed.  As such, we can only
+report back to FUSE one or the other, not both.  To avoid this situation, since all of our files have the inode number,
+we’ll either see a request for <cite>/docs/test</cite> or <cite>/docs/test&#64;12345-384820</cite>, in which case we know if
+we’ve received a request for a tag directory or a file.</p>
+<p>2. We also have no way of showing that two different files with the same names and same tags are actually separate
+files.  Imagine a very common filename, like <cite>README</cite> being tagged with the same tags.  If you listed a tag
+directory with those two files, you would see identical filenames, which isn’t allowed.  Suffixing the device id
+and inode number gets around this as well.</p>
+<p>Both of these cases are rarer in typical hierarchical filesystems, because you can just choose to rename a file in one
+specific location in the directory tree, but in the case of SuperTag, a tagged file exists in many tag subdirectories at
+once, so renaming it can have collisions elsewhere.</p>
+</div>
+<div class="section" id="why-isn-t-the-in-the-filename-suffix-a-real-at-character">
+<h3>Why isn’t the “﹫” in the filename suffix a real “at” character?<a class="headerlink" href="#why-isn-t-the-in-the-filename-suffix-a-real-at-character" title="Permalink to this headline">¶</a></h3>
+<p>I use a special unicode ﹫ to lower the chances of colliding with a filename with an authentic ascii &#64; in a filename.
+You can change this character in the SuperTag app settings.</p>
+</div>
+<div class="section" id="why-didn-t-you-use-the-fuse-crate">
+<h3>Why didn’t you use the <a class="reference external" href="https://crates.io/crates/fuse">fuse crate</a>?<a class="headerlink" href="#why-didn-t-you-use-the-fuse-crate" title="Permalink to this headline">¶</a></h3>
+<p>Andreas Neuhaus’s fuse crate is an excellent package, but it doesn’t do a very specific thing I needed SuperTag to do,
+and that is consistently report absolute path names to fuse callbacks.  After an email conversation with Andreas,
+he advised me on why his fuse crate took the direction it did, and how the support I was seeking might be implemented.
+I decided to use SuperTag to stage a prototype version of a fuse integration that provides the functionality I needed.</p>
+</div>
+<div class="section" id="why-didn-t-you-use-an-orm-for-the-database">
+<h3>Why didn’t you use an ORM for the database?<a class="headerlink" href="#why-didn-t-you-use-an-orm-for-the-database" title="Permalink to this headline">¶</a></h3>
+<p>ORMs are fine, but for SuperTag, I wanted a very clear, low level amount of control over the queries I was going to be
+constructing.  This may change in the future.</p>
+</div>
+</div>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="can-it-work-with-dropbox">
+<h3>Can it work with Dropbox?<a class="headerlink" href="#can-it-work-with-dropbox" title="Permalink to this headline">¶</a></h3>
+<p>Yes. It works because Dropbox files
+appear on your harddisk like any other file, and Supertag can create symlinks to them.</p>
+</div>
+<div class="section" id="can-you-share-the-supertag-folder-with-others">
+<h3>Can you share the Supertag folder with others?<a class="headerlink" href="#can-you-share-the-supertag-folder-with-others" title="Permalink to this headline">¶</a></h3>
+<p>You can easily mount Supertag on a cloud server and provide a simple web interface. Work is being done to support this.
+Please reach out to me directly at <a class="reference external" href="mailto:arwmoffat&#37;&#52;&#48;gmail&#46;com">arwmoffat<span>&#64;</span>gmail<span>&#46;</span>com</a> if this is something that
+interests you.</p>
+</div>
+<div class="section" id="will-you-support-other-database-backends">
+<h3>Will you support other database backends?<a class="headerlink" href="#will-you-support-other-database-backends" title="Permalink to this headline">¶</a></h3>
+<p>I am open to the idea.  Someone should make a compelling argument for pluggable backends, then we will have that
+discussion.  The main advantage of a database server is remote readers and writers, but that doesn’t totally make sense
+with a local filesystem, where the entries are symlinks pointing to other files on disk.  The code would also need
+to migrate to use an ORM, but that isn’t a huge deal.</p>
+</div>
+<div class="section" id="aren-t-tag-groups-a-hierarchical-structure">
+<h3>Aren’t tag groups a hierarchical structure?<a class="headerlink" href="#aren-t-tag-groups-a-hierarchical-structure" title="Permalink to this headline">¶</a></h3>
+<p>Yes, but albeit a very limited one.  The focus of SuperTag is tags, but I also don’t want tags to get in your way of
+using tags to their fullest potential.  If that means adding a hierarchical abstraction, then that’s still a win.</p>
+</div>
+<div class="section" id="who-made-your-logo">
+<h3>Who made your logo?<a class="headerlink" href="#who-made-your-logo" title="Permalink to this headline">¶</a></h3>
+<p>I did. You can see the source blender file I used to build the logo in the <code class="docutils literal notranslate"><span class="pre">logo/</span></code> directory of this repo.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="glossary.html" class="btn btn-neutral float-left" title="Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrew Moffat
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

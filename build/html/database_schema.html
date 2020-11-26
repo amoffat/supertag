@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Database Schema &mdash; Supertag 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/dosis.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tips &amp; Tricks" href="tips_and_tricks.html" />
+    <link rel="prev" title="OS-specific behavior" href="os_behavior.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Supertag
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os_behavior.html">OS-specific behavior</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Database Schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#files">files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tags">tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-tag">file_tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tag-groups">tag_groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tag-group-tag">tag_group_tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supertag-meta">supertag_meta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pins">pins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tips_and_tricks.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Supertag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Database Schema</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/database_schema.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="database-schema">
+<span id="id1"></span><h1>Database Schema<a class="headerlink" href="#database-schema" title="Permalink to this headline">¶</a></h1>
+<p>The database is pretty simple. There are no real surprises, just some small tables with simple
+relationships.</p>
+<a class="reference external image-reference" href="_images/db_schema.png"><img alt="Supertag database schema" src="_images/db_schema.png" /></a>
+<div class="section" id="files">
+<span id="files-table"></span><h2>files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">files</span></code> table contains files names that exist inside an entire <a class="reference internal" href="glossary.html#term-collection"><span class="xref std std-term">collection</span></a>. A file record is inserted
+when a new file is <span class="xref std std-ref">linked</span> into Supertag.</p>
+<dl class="simple">
+<dt>device</dt><dd><p>The device id where the target file resides. Together with the inode column, this can be used to reliably point to
+any file.</p>
+</dd>
+<dt>inode</dt><dd><p>The inode number of the target file. Together with the device column, this can be used to reliably point to
+any file.</p>
+</dd>
+<dt>path</dt><dd><p>The full path to the target file. This is used when resolving the Supertag symlink to the file. Due to this being
+a fragile field, if the target file moves, this breaks and needs healing, which is not yet implemented on Linux.</p>
+</dd>
+<dt>primary_tag</dt><dd><p>The file’s name as it appears in Supertag. Typically this will be populated with the name of the original file,
+when it was imported or linked.</p>
+</dd>
+<dt>ts</dt><dd><p>The timestamp of when the record was created.</p>
+</dd>
+<dt>mtime</dt><dd><p>The modification time of the file record.</p>
+</dd>
+<dt>alias_file</dt><dd><p>This column is only used on MacOS. See <span class="xref std std-ref">MacOS Aliases</span> for an explanation.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="tags">
+<span id="tags-table"></span><h2>tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">tags</span></code> table represents all of the <a class="reference internal" href="glossary.html#term-tag"><span class="xref std std-term">tags</span></a> in the <a class="reference internal" href="glossary.html#term-collection"><span class="xref std std-term">collection</span></a>. Every tag will have a
+corresponding folder at the top level of the <a class="reference internal" href="glossary.html#term-manifolder"><span class="xref std std-term">manifolder</span></a>. A tag record is inserted when a tag is
+<span class="xref std std-ref">created</span>.</p>
+<dl class="simple">
+<dt>tag_name</dt><dd><p>The tag name. Surprise!</p>
+</dd>
+<dt>ts</dt><dd><p>The timestamp of when the record was created.</p>
+</dd>
+<dt>mtime</dt><dd><p>The modification time of the tag record.</p>
+</dd>
+<dt>uid</dt><dd><p>The user id that the tag directory should have.</p>
+</dd>
+<dt>gid</dt><dd><p>The group id that the tag directory should have.</p>
+</dd>
+<dt>permissions</dt><dd><p>The permissions of the tag’s directory.</p>
+</dd>
+<dt>num_files</dt><dd><p>A pre-computed cache of the number of files that have this tag.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="file-tag">
+<h2>file_tag<a class="headerlink" href="#file-tag" title="Permalink to this headline">¶</a></h2>
+<p>The many-to-many intermediate table for <a class="reference internal" href="#files-table"><span class="std std-ref">files</span></a> and <a class="reference internal" href="#tags-table"><span class="std std-ref">tags</span></a>. A file can be tagged
+with many tags, and a tag can apply to many files. A file_tag record is inserted when a file is <span class="xref std std-ref">linked</span>
+to a tag.</p>
+<dl class="simple">
+<dt>ts</dt><dd><p>The timestamp of when the record was created.</p>
+</dd>
+<dt>mtime</dt><dd><p>The modification time of the file-tag record.</p>
+</dd>
+<dt>uid</dt><dd><p>The user id that the file should have, in the tag directory it is linked to.</p>
+</dd>
+<dt>gid</dt><dd><p>The group id that the file should have, in the tag directory it is linked to.</p>
+</dd>
+<dt>permissions</dt><dd><p>The permissions of the tag’s directory, derived from the umask of the user who created it.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="tag-groups">
+<h2>tag_groups<a class="headerlink" href="#tag-groups" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">tag_groups</span></code> table stores <span class="xref std std-ref">tag groups</span>.</p>
+<dl class="simple">
+<dt>name</dt><dd><p>The tag group name. Surprise!</p>
+</dd>
+<dt>ts</dt><dd><p>The timestamp of when the record was created.</p>
+</dd>
+<dt>mtime</dt><dd><p>The modification time of the tag group record.</p>
+</dd>
+<dt>uid</dt><dd><p>The user id that the tag group directory should have.</p>
+</dd>
+<dt>gid</dt><dd><p>The group id that the tag group directory should have.</p>
+</dd>
+<dt>permissions</dt><dd><p>The permissions of the tag group’s directory.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="tag-group-tag">
+<h2>tag_group_tag<a class="headerlink" href="#tag-group-tag" title="Permalink to this headline">¶</a></h2>
+<p>The many-to-many intermediate table for <a class="reference internal" href="#tags-table"><span class="std std-ref">tags</span></a> and <span class="xref std std-ref">tag_groups</span>. A tag can
+belong to many tag groups, and a tag group can contain many tags. A record for this table is inserted when the user
+<span class="xref std std-ref">creates a tag group</span>.</p>
+<dl class="simple">
+<dt>ts</dt><dd><p>The timestamp of when the record was created.</p>
+</dd>
+<dt>mtime</dt><dd><p>The modification time of the tag-group-tag record.</p>
+</dd>
+<dt>uid</dt><dd><p>The user id that the tag-group-tag directory should have.</p>
+</dd>
+<dt>gid</dt><dd><p>The group id that the tag-group-tag directory should have.</p>
+</dd>
+<dt>permissions</dt><dd><p>The permissions of the tag-group-tag’s directory.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="supertag-meta">
+<h2>supertag_meta<a class="headerlink" href="#supertag-meta" title="Permalink to this headline">¶</a></h2>
+<p>This metadata table tracks some simple data related to the Supertag collection itself.</p>
+<dl class="simple">
+<dt>migration_version</dt><dd><p>A simple integer version of which db migrations have been applied.</p>
+</dd>
+<dt>supertag_version</dt><dd><p>The semantic version of the app.</p>
+</dd>
+<dt>root_mtime</dt><dd><p>The modification time of the root collection directory itself.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="pins">
+<h2>pins<a class="headerlink" href="#pins" title="Permalink to this headline">¶</a></h2>
+<p>Pins are essentially tag intersections that have been “pinned” to exist. They originate from the need
+to create tag folders before tagging files into them. For example, pins allow you to create <code class="docutils literal notranslate"><span class="pre">/tag1/tag2/</span></code>
+and then link a file into that subdirectory. You normally wouldn’t be able to do this, as without pins,
+<code class="docutils literal notranslate"><span class="pre">tag2</span></code> would only appear under <code class="docutils literal notranslate"><span class="pre">tag1</span></code> if they contain intersecting files.</p>
+<dl class="simple">
+<dt>tag_ids</dt><dd><p>Each row is a path containing the tag ids to pin.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tips_and_tricks.html" class="btn btn-neutral float-right" title="Tips &amp; Tricks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="os_behavior.html" class="btn btn-neutral float-left" title="OS-specific behavior" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrew Moffat
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

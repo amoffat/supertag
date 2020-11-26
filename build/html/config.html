@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Config &mdash; Supertag 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/dosis.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Architecture" href="architecture.html" />
+    <link rel="prev" title="Merging tags" href="usage/merging_tags.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Supertag
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#symbols">symbols</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inode-char">inode_char</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sync-char">sync_char</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filedir-str">filedir_str</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mount">mount</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#base-dir">base_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uid">uid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gid">gid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#permissions">permissions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os_behavior.html">OS-specific behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_schema.html">Database Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips_and_tricks.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Supertag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/config.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="config">
+<h1>Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h1>
+<p>The default config file:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[symbols]</span>
+<span class="n">inode_char</span> <span class="o">=</span> <span class="s">&quot;-&quot;</span>
+<span class="n">device_char</span> <span class="o">=</span> <span class="s">&quot;﹫&quot;</span>
+<span class="n">sync_char</span> <span class="o">=</span> <span class="s">&quot;\u007F&quot;</span>
+<span class="n">filedir_str</span> <span class="o">=</span> <span class="s">&quot;_&quot;</span>
+
+<span class="k">[mount]</span>
+</pre></div>
+</div>
+<p>Below, we will explain each section, and each value in each section, including values that are not defined in the
+default config file.</p>
+<div class="section" id="symbols">
+<h2>symbols<a class="headerlink" href="#symbols" title="Permalink to this headline">¶</a></h2>
+<p>This section contains the various symbols that exist throughout SuperTag.</p>
+<div class="section" id="inode-char">
+<h3>inode_char<a class="headerlink" href="#inode-char" title="Permalink to this headline">¶</a></h3>
+<p>A typical <a class="reference internal" href="glossary.html#term-fully-qualified-symlink"><span class="xref std std-term">fully-qualified symlink</span></a> SuperTag symlink file looks like
+this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">rust_cheatsheet.png﹫64770-19022060</span></code></p>
+<p>In this filename example, <code class="docutils literal notranslate"><span class="pre">﹫</span></code> is the <code class="docutils literal notranslate"><span class="pre">device_char</span></code>, and <code class="docutils literal notranslate"><span class="pre">-</span></code> is the <code class="docutils literal notranslate"><span class="pre">inode_char</span></code></p>
+</div>
+<div class="section" id="sync-char">
+<h3>sync_char<a class="headerlink" href="#sync-char" title="Permalink to this headline">¶</a></h3>
+<p>You shouldn’t need to mess with this.  This character is not visible to you as a user, and only serves
+to sync a cache flush from a tagging process to the mounting daemon.</p>
+</div>
+<div class="section" id="filedir-str">
+<h3>filedir_str<a class="headerlink" href="#filedir-str" title="Permalink to this headline">¶</a></h3>
+<p>This is the name of every filedir in a SuperTag collection.  It can be more than a single character.  For example,
+you might use the name “tag_intersections” instead of “_”.</p>
+</div>
+</div>
+<div class="section" id="mount">
+<h2>mount<a class="headerlink" href="#mount" title="Permalink to this headline">¶</a></h2>
+<p>This section contains details related to the mounting of a SuperTag collection.</p>
+<div class="section" id="base-dir">
+<h3>base_dir<a class="headerlink" href="#base-dir" title="Permalink to this headline">¶</a></h3>
+<p>By default, this directory is determined from your platform.  On Linux, for example, it is <code class="docutils literal notranslate"><span class="pre">/mnt</span></code>.  On MacOS, it is
+<code class="docutils literal notranslate"><span class="pre">/Volumes</span></code>.  You can override the mount location by changing this key.</p>
+</div>
+<div class="section" id="uid">
+<h3>uid<a class="headerlink" href="#uid" title="Permalink to this headline">¶</a></h3>
+<p>This is the user id of the mounted collection.  By default, it is determined by the user id of the user that spawned
+the mount daemon.</p>
+</div>
+<div class="section" id="gid">
+<h3>gid<a class="headerlink" href="#gid" title="Permalink to this headline">¶</a></h3>
+<p>This is the group id of the mounted collection.  By default, it is determined by the group id of the user that spawned
+the mount daemon.</p>
+</div>
+<div class="section" id="permissions">
+<h3>permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h3>
+<p>These are the default mount permissions of the mounted collection.  By default, it is determined by the umask of the
+user that spawned the mount daemon.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="architecture.html" class="btn btn-neutral float-right" title="Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage/merging_tags.html" class="btn btn-neutral float-left" title="Merging tags" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrew Moffat
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

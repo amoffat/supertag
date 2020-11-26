@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart &mdash; Supertag 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/dosis.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mounting" href="mounting.html" />
+    <link rel="prev" title="Usage" href="../usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Supertag
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">Usage</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mounting.html">Mounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_tags.html">Creating tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linking.html">Linking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="removing_tags.html">Removing tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merging_tags.html">Merging tags</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config.html">Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os_behavior.html">OS-specific behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database_schema.html">Database Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips_and_tricks.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Supertag</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html">Usage</a> &raquo;</li>
+        
+      <li>Quickstart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/usage/quickstart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quickstart">
+<span id="id1"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<p>After you’ve <a class="reference internal" href="../installation.html#installation"><span class="std std-ref">installed</span></a> Supertag, you are ready to start using it. First, let’s mount a new
+<a class="reference internal" href="../glossary.html#term-collection"><span class="xref std std-term">collection</span></a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag mount myfiles
+</pre></div>
+</div>
+<p>You should see something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mounting</span> <span class="n">to</span> <span class="s2">&quot;/mnt/myfiles&quot;</span>
+<span class="n">Forked</span> <span class="n">into</span> <span class="n">background</span> <span class="n">PID</span> <span class="mi">19754</span>
+</pre></div>
+</div>
+<p>Great, Supertag tells where it mounted your collection and opens that location in a file browser. We can check what collections are available and where they’re mounted with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag fstab
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Collections</span><span class="p">:</span>
+  <span class="o">*</span> <span class="n">myfiles</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">myfiles</span>
+</pre></div>
+</div>
+<p>The star in front indicates a <a class="reference internal" href="../glossary.html#term-primary-collection"><span class="xref std std-term">primary collection</span></a>, and because the collection is mounted, we see the path that
+it is mounted to.</p>
+<p>Now let’s start tagging files. First, save this photo of M. C. Escher’s <em>Waterfall.</em> We’ll
+use it to test out tagging:</p>
+<img alt="../_images/waterfall.jpg" src="../_images/waterfall.jpg" />
+<p>Now let’s tag it using our tag binary:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag ln waterfall.jpg escher/waterfall/architecture
+</pre></div>
+</div>
+<p>Now let’s browse to <code class="docutils literal notranslate"><span class="pre">/mnt/myfiles</span></code> and explore what Supertag did. Supertag created 3 new tags and represented them as directories:</p>
+<img alt="../_images/3tags.png" src="../_images/3tags.png" />
+<p>Click into <code class="docutils literal notranslate"><span class="pre">waterfall</span></code>. You’ll see the following directories listed:</p>
+<img alt="../_images/subdirs.png" src="../_images/subdirs.png" />
+<p>What’s happening here is Supertag is showing <code class="docutils literal notranslate"><span class="pre">escher</span></code> and <code class="docutils literal notranslate"><span class="pre">architecture</span></code> as subdirectories
+because there exists at least 1 file (waterfall.jpg) that shares the tag <code class="docutils literal notranslate"><span class="pre">waterfall</span></code> as well as the
+tags <code class="docutils literal notranslate"><span class="pre">escher</span></code> and <code class="docutils literal notranslate"><span class="pre">architecture</span></code>.</p>
+<p>You’ll also notice a funny directory named <code class="docutils literal notranslate"><span class="pre">⋂</span></code>. This directory means “the intersection of.” Its
+contents will be the <em>files</em> of the intersection of the tags in your current path:</p>
+<img alt="../_images/intersection.png" src="../_images/intersection.png" />
+<p>Let’s add a couple more tags, but this time, let’s use some of our native system binaries. First
+let’s create some <span class="xref std std-term">tagdirs</span> to ensure that we have somewhere to link to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p /mnt/myfiles/lithograph/impossible
+</pre></div>
+</div>
+<p>Now let’s link our photo with a symlink:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln -sf waterfall.jpg /mnt/myfiles/lithograph/impossible
+</pre></div>
+</div>
+<p>This added 2 more tags to our photo:</p>
+<img alt="../_images/moretags.png" src="../_images/moretags.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We could have created our tags separately with individual mkdir commands, and also linked
+the photo to those two tags with individual ln commands, but I wanted to demonstrate the
+concept of <a class="reference internal" href="../glossary.html#term-pinning"><span class="xref std std-term">pinning</span></a>, as well as applying multiple tags at once.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mounting.html" class="btn btn-neutral float-right" title="Mounting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrew Moffat
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
