@@ -12,18 +12,13 @@ cache: cargo
 # https://github.com/travis-ci/travis-ci/issues/10017#issuecomment-414323977
 osx_image: xcode8.3
 
-addons:
-  homebrew:
-    packages:
-      #- beanstalk
-    casks:
-      - osxfuse
-
 before_install:
+    - brew install osxfuse
     - brew cask info osxfuse
     - ls -l /usr/local/include/osxfuse
     - ls -l /usr/local/lib/pkgconfig/
     - pkg-config --libs --cflags osxfuse 'osxfuse >= 2.6.0'
+
 #before_install:
 #    - sudo apt-get update
 #    - sudo apt-get -y install libdbus-glib-1-dev libfuse-dev libsqlite3-dev
