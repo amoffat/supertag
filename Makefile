@@ -4,7 +4,7 @@
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
+SPHINXBUILD   ?= .venv/bin/sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 
@@ -18,3 +18,11 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+.PHONY: docs
+docs:
+	$(MAKE) clean
+	$(MAKE) html
+	rm -rf docs/*
+	touch docs/.nojekyll
+	mv build/html/* docs/
