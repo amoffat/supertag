@@ -1,0 +1,24 @@
+[package]
+name = "fuse-sys"
+version = "0.1.0"
+authors = ["Andrew Moffat <arwmoffat@gmail.com>"]
+edition = "2018"
+description = "A high-level fuse wrapper based on Ubuntu 18.04 LTS's fuse, version 2.9.7"
+license = "GPL-3.0-or-later"
+readme = "README.md"
+repository = "https://github.com/amoffat/supertag"
+keywords = ["fuse", "filesystem", "fs"]
+categories = ["filesystem", "external-ffi-bindings", "os::unix-apis", "os::macos-apis"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "0.2"
+nix = "0.15.0"
+log = "0.4"
+chrono = "0.4"
+parking_lot = "0.11.0"
+
+[build-dependencies]
+pkg-config = "0.3"
+bindgen = "0.52.0"
