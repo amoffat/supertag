@@ -7,3 +7,6 @@ rust:
     - 1.47.0
 
 cache: cargo
+
+before_install:
+    - apt install libdbus-glib-1-dev libfuse-dev libsqlite3-dev
