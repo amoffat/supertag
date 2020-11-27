@@ -26,3 +26,4 @@ docs:
 	rm -rf docs/*
 	touch docs/.nojekyll
 	mv build/html/* docs/
+	cp -rv cla/ docs/

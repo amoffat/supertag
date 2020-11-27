@@ -27,3 +27,5 @@ The first thing you'll want to do is mount the filesystem, so start :ref:`here <
     usage/linking
     usage/removing_tags
     usage/merging_tags
+    usage/pinning
+    usage/tag_groups

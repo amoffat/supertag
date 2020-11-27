@@ -155,5 +155,5 @@ CLA
 ===
 
 If you'd like to make a contribution back upstream to Supertag, please be aware that we require a `Contributors
-License Agreement <https://s3-us-west-2.amazonaws.com/supertag.ai/cla/index.html>`_ (CLA). This is because we
+License Agreement <cla/index.html>`_ (CLA). This is because we
 may offer a dual-licensed version of Supertag in the future.

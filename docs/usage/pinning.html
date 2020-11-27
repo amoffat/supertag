@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating tags &mdash; Supertag 0.1.0 documentation</title>
+  <title>Pinning &mdash; Supertag 0.1.0 documentation</title>
   
 
   
@@ -41,8 +41,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linking" href="linking.html" />
-    <link rel="prev" title="Mounting" href="mounting.html" /> 
+    <link rel="next" title="Tag groups" href="tag_groups.html" />
+    <link rel="prev" title="Merging tags" href="merging_tags.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,15 +92,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../usage.html">Usage</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mounting.html">Mounting</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating tags</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#file-browser-gui">File browser GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tag-binary"><code class="docutils literal notranslate"><span class="pre">tag</span></code> binary</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="creating_tags.html">Creating tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linking.html">Linking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="removing_tags.html">Removing tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="merging_tags.html">Merging tags</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pinning.html">Pinning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pinning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tag_groups.html">Tag groups</a></li>
 </ul>
 </li>
@@ -160,13 +156,13 @@
         
           <li><a href="../usage.html">Usage</a> &raquo;</li>
         
-      <li>Creating tags</li>
+      <li>Pinning</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/usage/creating_tags.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/usage/pinning.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -179,20 +175,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-tags">
-<h1>Creating tags<a class="headerlink" href="#creating-tags" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="file-browser-gui">
-<h2>File browser GUI<a class="headerlink" href="#file-browser-gui" title="Permalink to this headline">¶</a></h2>
-<p>To create a tag in your file browser, usually you can right-click and select “New Folder”. The folder
-that you create will be a tag.</p>
-</div>
-<div class="section" id="tag-binary">
-<h2><code class="docutils literal notranslate"><span class="pre">tag</span></code> binary<a class="headerlink" href="#tag-binary" title="Permalink to this headline">¶</a></h2>
-<p>You aren’t required</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag
-</pre></div>
-</div>
-</div>
+  <div class="section" id="pinning">
+<h1>Pinning<a class="headerlink" href="#pinning" title="Permalink to this headline">¶</a></h1>
+<p>By default, the directory <cite>/studies/climate</cite> will only exist if there are files tagged with both <cite>studies</cite> and <cite>climate</cite>.
+This is because tagdirs are tag <em>intersections.</em>  If there are no files with both of those tags, that specific directory
+path won’t exist.  This is useful for navigating directories, because you will only
+see sub-tagdirs that are relevant to your current tagdir, but not so useful when populating the tagdirs for the first time.
+To alleviate this problem, we use tagdir pinning.</p>
+<p>Pinning is creating a temporary “pin” in a tagdir path, so that you can navigate to it without requiring actual files to exist
+inside of it.  This allows you to create nested, ad-hoc tagdirs from a “save file” dialog.  Without tagdir pinning, you
+could not browse to <cite>/studies/climate</cite> unless there already existed files tagged with <cite>studies</cite> and <cite>climate</cite>.</p>
 </div>
 
 
@@ -203,10 +195,10 @@ that you create will be a tag.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="linking.html" class="btn btn-neutral float-right" title="Linking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tag_groups.html" class="btn btn-neutral float-right" title="Tag groups" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mounting.html" class="btn btn-neutral float-left" title="Mounting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="merging_tags.html" class="btn btn-neutral float-left" title="Merging tags" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
