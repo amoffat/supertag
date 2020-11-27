@@ -247,7 +247,6 @@ pub fn make_mount_config<P: AsRef<Path>>(collection: &str, db_path: P) -> MountC
     mount_conf.fsname = Some(make_fs_name(collection, &db_path));
     mount_conf.subtype = Some("manifold".to_string());
     mount_conf.default_permissions = Some(true); // enable kernel-enforced permission checks
-    mount_conf.allow_other = Some(true); // allow other users to access files
 
     #[cfg(target_os = "macos")]
     {
