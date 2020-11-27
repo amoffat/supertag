@@ -26,12 +26,11 @@ Linux
 
 .. code-block:: bash
 
-    sudo apt-add-repository -u ppa:amoffat/supertag
-    sudo apt install supertag
+    ...
 
 Mac
 ---
 
 .. code-block:: bash
 
-    brew install supertag
+    ...
