@@ -17,14 +17,14 @@ filesystem via the ``fuse-sys`` Rust crate, written specifically for Supertag. T
 surface a user's filesystem actions and connect them to Supertag application code.
 
 For example, ``mkdir`` can be used to create a new :term:`tag` in Supertag, while ``ln`` can be used to manually link
-a file to that :term:`tag`. The actions resulting from these commands are channeled through FUSE to allow manipulating
-Supertag files and :term:`tags <tag>`.
+a file to that tag. The actions resulting from these commands are channeled through FUSE to allow manipulating
+Supertag files and tags.
 
 SQLite database
 ***************
 
 The Supertag backend is a :term:`per-collection <collection>` sqlite database. It contains the records for files,
-tags, the many-to-many links between files and tags, directories to watch, and other useful data. See the
+tags, the many-to-many links between files and tags, and other useful data. See the
 :ref:`Datatabase Schema <database_schema>` for more details.
 
 
@@ -38,10 +38,11 @@ will let you link a file to multiple non existant tags at the same time:
 
 .. code-block:: bash
 
-    tag ln /home/Desktop/somefile.pdf /mnt/mydocs/pdfs/documents/research/projects
+    tag ln /home/Desktop/somefile.pdf pdfs/documents/research/projects
 
 The above isn't possible with regular ``ln`` unless the :term:`tagpath` ``pdfs/documents/research/projects`` already
-exists, otherwise ``ln`` will report ``No such file or directory.`` The ``tag`` binary allows you to do this.
+exists, otherwise ``ln`` will report ``No such file or directory.`` However, ``tag`` binary allows you to do this
+by creating tags as needed directly in the sqlite database.
 
 Database
 ********

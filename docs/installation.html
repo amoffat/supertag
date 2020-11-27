@@ -89,12 +89,13 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#easy">Easy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#normal">Normal</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#macos">MacOS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linux">Linux</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#development">Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#common">Common</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">MacOS</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 </ul>
@@ -103,7 +104,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#id4">Dependencies</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#common">Common</a></li>
 </ul>
 </li>
 </ul>
@@ -184,10 +184,10 @@
             
   <div class="section" id="installation">
 <span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Use the <a class="reference internal" href="#easy-install"><span class="std std-ref">Easy</span></a> method if you just want to try Supertag. If you’re interested in development and contributing to the
+<p>Use the <a class="reference internal" href="#normal-install"><span class="std std-ref">Normal</span></a> method if you just want to try Supertag. If you’re interested in development and contributing to the
 project, use the <a class="reference internal" href="#dev-install"><span class="std std-ref">Development</span></a> method.</p>
-<div class="section" id="easy">
-<span id="easy-install"></span><h2>Easy<a class="headerlink" href="#easy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="normal">
+<span id="normal-install"></span><h2>Normal<a class="headerlink" href="#normal" title="Permalink to this headline">¶</a></h2>
 <p>This will install the Supertag binary and set up all dependencies for you.</p>
 <div class="section" id="macos">
 <h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
@@ -208,6 +208,14 @@ sudo mv supertag /usr/local/bin
 <div class="section" id="development">
 <span id="dev-install"></span><h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
 <p>This will set up the Supertag repository on your computer and get the development environment ready.</p>
+<div class="section" id="common">
+<h3>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
+<p>Whether you’re installing on MacOS or Linux, you’ll need to do the following setup.</p>
+<p>Grab a copy of the Supertag source code from Github:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/amoffat/supertag.git
+</pre></div>
+</div>
+</div>
 <div class="section" id="id2">
 <h3>MacOS<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="dependencies">
@@ -231,7 +239,8 @@ brew cask install osxfuse
 </pre></div>
 </div>
 <p>Now go to <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Preferences</span> <span class="pre">-&gt;</span> <span class="pre">Security</span> <span class="pre">&amp;</span> <span class="pre">Privacy</span> <span class="pre">-&gt;</span> <span class="pre">General</span></code> and click “Allow” for “Benjamin Fleischer”.
-Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.</p>
+Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.
+You will need to reboot.</p>
 </div>
 </div>
 <div class="section" id="id3">
@@ -253,14 +262,6 @@ Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly 
     cmake
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="common">
-<h3>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
-<p>Whether you’re installing on MacOS or Linux, you’ll need to do the following setup.</p>
-<p>Grab a copy of the Supertag source code from Github:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/amoffat/supertag.git
-</pre></div>
 </div>
 </div>
 </div>

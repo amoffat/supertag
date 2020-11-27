@@ -3,13 +3,13 @@
 Installation
 ############
 
-Use the :ref:`Easy <easy_install>` method if you just want to try Supertag. If you're interested in development and contributing to the
+Use the :ref:`Normal <normal_install>` method if you just want to try Supertag. If you're interested in development and contributing to the
 project, use the :ref:`Development <dev_install>` method.
 
-.. _easy_install:
+.. _normal_install:
 
-Easy
-****
+Normal
+******
 
 This will install the Supertag binary and set up all dependencies for you.
 
@@ -37,6 +37,18 @@ Development
 ***********
 
 This will set up the Supertag repository on your computer and get the development environment ready.
+
+Common
+======
+
+Whether you're installing on MacOS or Linux, you'll need to do the following setup.
+
+Grab a copy of the Supertag source code from Github:
+
+.. code-block:: bash
+
+    git clone https://github.com/amoffat/supertag.git
+
 
 MacOS
 =====
@@ -72,6 +84,7 @@ Install `OSXFuse <https://osxfuse.github.io/>`_. Supertag is built on the
 
 Now go to ``System Preferences -> Security & Privacy -> General`` and click "Allow" for "Benjamin Fleischer".
 Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.
+You will need to reboot.
 
 Linux
 =====
@@ -97,14 +110,3 @@ Now install some basic dependencies for building:
         llvm \
         libsqlite3-dev \
         cmake
-
-Common
-======
-
-Whether you're installing on MacOS or Linux, you'll need to do the following setup.
-
-Grab a copy of the Supertag source code from Github:
-
-.. code-block:: bash
-
-    git clone https://github.com/amoffat/supertag.git

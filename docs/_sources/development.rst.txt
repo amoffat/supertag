@@ -13,16 +13,17 @@ Running the test suite is easy:
 
     scripts/run_tests.sh
 
-If you're on Linux, this runs about ~140 tests and finishes pretty quickly. If you're on MacOS, I believe it is around
-~170 tests, and is much slower. This is because we have to run with ``--test-threads=1``
+If you're on Linux, this runs about ~110 tests and finishes pretty quickly. If you're on MacOS, I believe it is around
+~140 tests, and is much slower. This is because we have to run with ``--test-threads=1`` due to some weird threading
+quirks.
 
 If a test breaks, and you want to run it individually, run the following:
 
 .. code-block:: bash
 
-    STAG_LOG=1 scripts/itest.sh test_photo_faces
+    STAG_LOG=1 scripts/itest.sh test_funky_name
 
-This runs the ``test_photo_faces`` test. ``STAG_LOG=1`` will enable full output logging at the trace level and higher.
+This runs the ``test_funky_name`` test. ``STAG_LOG=1`` will enable full output logging at the trace level and higher.
 This is necessary for debugging the really tricky bugs.
 
 .. note::

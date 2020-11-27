@@ -188,13 +188,14 @@ development environment is setup. See <a class="reference internal" href="instal
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scripts/run_tests.sh
 </pre></div>
 </div>
-<p>If you’re on Linux, this runs about ~140 tests and finishes pretty quickly. If you’re on MacOS, I believe it is around
-~170 tests, and is much slower. This is because we have to run with <code class="docutils literal notranslate"><span class="pre">--test-threads=1</span></code></p>
+<p>If you’re on Linux, this runs about ~110 tests and finishes pretty quickly. If you’re on MacOS, I believe it is around
+~140 tests, and is much slower. This is because we have to run with <code class="docutils literal notranslate"><span class="pre">--test-threads=1</span></code> due to some weird threading
+quirks.</p>
 <p>If a test breaks, and you want to run it individually, run the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">STAG_LOG</span><span class="o">=</span><span class="m">1</span> scripts/itest.sh test_photo_faces
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">STAG_LOG</span><span class="o">=</span><span class="m">1</span> scripts/itest.sh test_funky_name
 </pre></div>
 </div>
-<p>This runs the <code class="docutils literal notranslate"><span class="pre">test_photo_faces</span></code> test. <code class="docutils literal notranslate"><span class="pre">STAG_LOG=1</span></code> will enable full output logging at the trace level and higher.
+<p>This runs the <code class="docutils literal notranslate"><span class="pre">test_funky_name</span></code> test. <code class="docutils literal notranslate"><span class="pre">STAG_LOG=1</span></code> will enable full output logging at the trace level and higher.
 This is necessary for debugging the really tricky bugs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

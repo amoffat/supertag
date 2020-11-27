@@ -180,13 +180,13 @@ doing, at a technical level. At its core, Supertag is system for viewing tags in
 filesystem via the <code class="docutils literal notranslate"><span class="pre">fuse-sys</span></code> Rust crate, written specifically for Supertag. The job of <code class="docutils literal notranslate"><span class="pre">fuse-sys</span></code> is to
 surface a user’s filesystem actions and connect them to Supertag application code.</p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> can be used to create a new <a class="reference internal" href="glossary.html#term-tag"><span class="xref std std-term">tag</span></a> in Supertag, while <code class="docutils literal notranslate"><span class="pre">ln</span></code> can be used to manually link
-a file to that <a class="reference internal" href="glossary.html#term-tag"><span class="xref std std-term">tag</span></a>. The actions resulting from these commands are channeled through FUSE to allow manipulating
-Supertag files and <a class="reference internal" href="glossary.html#term-tag"><span class="xref std std-term">tags</span></a>.</p>
+a file to that tag. The actions resulting from these commands are channeled through FUSE to allow manipulating
+Supertag files and tags.</p>
 </div>
 <div class="section" id="sqlite-database">
 <h2>SQLite database<a class="headerlink" href="#sqlite-database" title="Permalink to this headline">¶</a></h2>
 <p>The Supertag backend is a <a class="reference internal" href="glossary.html#term-collection"><span class="xref std std-term">per-collection</span></a> sqlite database. It contains the records for files,
-tags, the many-to-many links between files and tags, directories to watch, and other useful data. See the
+tags, the many-to-many links between files and tags, and other useful data. See the
 <a class="reference internal" href="database_schema.html#database-schema"><span class="std std-ref">Datatabase Schema</span></a> for more details.</p>
 </div>
 <div class="section" id="the-tag-binary">
@@ -195,11 +195,12 @@ tags, the many-to-many links between files and tags, directories to watch, and o
 commandline or through a GUI file browser. See <a class="reference internal" href="usage.html#usage"><span class="std std-ref">Usage</span></a>. However, some operations that
 are a little more nuanced are provided as subcommands on the Supertag <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary. For example the <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary
 will let you link a file to multiple non existant tags at the same time:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag ln /home/Desktop/somefile.pdf /mnt/mydocs/pdfs/documents/research/projects
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag ln /home/Desktop/somefile.pdf pdfs/documents/research/projects
 </pre></div>
 </div>
 <p>The above isn’t possible with regular <code class="docutils literal notranslate"><span class="pre">ln</span></code> unless the <a class="reference internal" href="glossary.html#term-tagpath"><span class="xref std std-term">tagpath</span></a> <code class="docutils literal notranslate"><span class="pre">pdfs/documents/research/projects</span></code> already
-exists, otherwise <code class="docutils literal notranslate"><span class="pre">ln</span></code> will report <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory.</span></code> The <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary allows you to do this.</p>
+exists, otherwise <code class="docutils literal notranslate"><span class="pre">ln</span></code> will report <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory.</span></code> However, <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary allows you to do this
+by creating tags as needed directly in the sqlite database.</p>
 </div>
 <div class="section" id="database">
 <h2>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h2>
