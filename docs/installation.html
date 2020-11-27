@@ -100,8 +100,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Linux</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id4">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Linux</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Dependencies</a></li>
 </ul>
 </li>
 </ul>
@@ -191,6 +191,15 @@ project, use the <a class="reference internal" href="#dev-install"><span class="
 <p>This will install the Supertag binary and set up all dependencies for you.</p>
 <div class="section" id="macos">
 <h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
+<p>Install <a class="reference external" href="https://osxfuse.github.io/">OSXFuse</a>. Supertag is built on the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Filesystem_in_Userspace">FUSE</a> platform, and OSXFuse is MacOS’s port of it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew cask install osxfuse
+</pre></div>
+</div>
+<p>Now go to <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Preferences</span> <span class="pre">-&gt;</span> <span class="pre">Security</span> <span class="pre">&amp;</span> <span class="pre">Privacy</span> <span class="pre">-&gt;</span> <span class="pre">General</span></code> and click “Allow” for “Benjamin Fleischer”.
+Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.
+You will need to reboot.</p>
+<p>Now you’re ready to install Supertag:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install supertag
 </pre></div>
 </div>
@@ -234,8 +243,7 @@ sudo mv supertag /usr/local/bin
 </div>
 <p>Install <a class="reference external" href="https://osxfuse.github.io/">OSXFuse</a>. Supertag is built on the
 <a class="reference external" href="https://en.wikipedia.org/wiki/Filesystem_in_Userspace">FUSE</a> platform, and OSXFuse is MacOS’s port of it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew tap homebrew/cask
-brew cask install osxfuse
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew cask install osxfuse
 </pre></div>
 </div>
 <p>Now go to <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Preferences</span> <span class="pre">-&gt;</span> <span class="pre">Security</span> <span class="pre">&amp;</span> <span class="pre">Privacy</span> <span class="pre">-&gt;</span> <span class="pre">General</span></code> and click “Allow” for “Benjamin Fleischer”.
@@ -243,10 +251,10 @@ Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly 
 You will need to reboot.</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Linux<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id4">
-<h4>Dependencies<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h3>Linux<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>Dependencies<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>Install Rust:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
 </pre></div>

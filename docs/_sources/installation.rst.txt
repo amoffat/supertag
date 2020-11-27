@@ -16,6 +16,19 @@ This will install the Supertag binary and set up all dependencies for you.
 MacOS
 =====
 
+Install `OSXFuse <https://osxfuse.github.io/>`_. Supertag is built on the
+`FUSE <https://en.wikipedia.org/wiki/Filesystem_in_Userspace>`_ platform, and OSXFuse is MacOS's port of it:
+
+.. code-block:: bash
+
+    brew cask install osxfuse
+
+Now go to ``System Preferences -> Security & Privacy -> General`` and click "Allow" for "Benjamin Fleischer".
+Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.
+You will need to reboot.
+
+Now you're ready to install Supertag:
+
 .. code-block:: bash
 
     brew install supertag
@@ -79,7 +92,6 @@ Install `OSXFuse <https://osxfuse.github.io/>`_. Supertag is built on the
 
 .. code-block:: bash
 
-    brew tap homebrew/cask
     brew cask install osxfuse
 
 Now go to ``System Preferences -> Security & Privacy -> General`` and click "Allow" for "Benjamin Fleischer".
