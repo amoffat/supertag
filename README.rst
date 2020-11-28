@@ -36,4 +36,4 @@ Mac
 
 .. code-block:: bash
 
-    brew upgrade amoffat/rnd/supertag
+    brew install amoffat/rnd/supertag
