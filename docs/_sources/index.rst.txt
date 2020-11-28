@@ -33,6 +33,9 @@ Supertag
 .. image:: https://img.shields.io/travis/amoffat/supertag/master.svg?style=flat-square
     :target: https://travis-ci.org/amoffat/supertag
     :alt: Build Status
+.. image:: https://img.shields.io/badge/Documentation-v0.1.1-brightgreen?style=flat-square&logo=read-the-docs&logoColor=white&color=1a6cff
+    :target: https://amoffat.github.io/supertag/
+    :alt: Docs
 
 
 Supertag is a tag-based file system, written in `Rust <https://www.rust-lang.org/>`_,
