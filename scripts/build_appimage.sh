@@ -9,6 +9,7 @@ dist="$3"
 supertag="$DIR"/..
 data="$supertag"/data/appimage
 signkey="EB19C5A7D839413DC078E074D2D5C7DFE8DA08B1"
+appimage_name="supertag-v$version-x86_64.AppImage"
 
 cd "$supertag"
 
@@ -34,4 +35,4 @@ cp /lib/x86_64-linux-gnu/libmount.so.1 usr/lib
 cp "$supertag"/logo/512.png ./supertag.png
 cp "$data"/tag.desktop .
 
-/home/amoffat/Applications/appimagetool-x86_64.AppImage --sign --sign-key "$signkey" "$appdir" "$dist"/supertag
+/home/amoffat/Applications/appimagetool-x86_64.AppImage --sign --sign-key "$signkey" "$appdir" "$dist"/"$appimage_name"
