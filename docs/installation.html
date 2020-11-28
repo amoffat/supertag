@@ -200,16 +200,16 @@ project, use the <a class="reference internal" href="#dev-install"><span class="
 Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.
 You will need to reboot.</p>
 <p>Now you’re ready to install Supertag:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install supertag
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install amoffat/rnd/supertag
 </pre></div>
 </div>
 </div>
 <div class="section" id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
 <p>The following <a class="reference external" href="https://appimage.org/">AppImage</a> works on all major Linux distributions:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -O supertag https://github.com
-chmod +x supertag
-sudo mv supertag /usr/local/bin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -Ls https://github.com/amoffat/supertag/releases/latest/download/supertag-x86_64.AppImage &gt; tag
+sudo mv tag /usr/local/bin/tag
+sudo chmod +x /usr/local/bin/tag
 </pre></div>
 </div>
 </div>

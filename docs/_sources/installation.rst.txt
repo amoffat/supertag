@@ -31,7 +31,7 @@ Now you're ready to install Supertag:
 
 .. code-block:: bash
 
-    brew install supertag
+    brew install amoffat/rnd/supertag
 
 Linux
 =====
@@ -40,9 +40,9 @@ The following `AppImage <https://appimage.org/>`_ works on all major Linux distr
 
 .. code-block:: bash
 
-    wget -O supertag https://github.com
-    chmod +x supertag
-    sudo mv supertag /usr/local/bin
+    curl -Ls https://github.com/amoffat/supertag/releases/latest/download/supertag-x86_64.AppImage > tag
+    sudo mv tag /usr/local/bin/tag
+    sudo chmod +x /usr/local/bin/tag
 
 .. _dev_install:
 

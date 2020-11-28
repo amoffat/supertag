@@ -17,6 +17,9 @@ Glossary
         :term:`collection`. Tags are linked to files in a many-to-many relationship: a tag can apply to many files,
         and a file can be labeled with many tags.
 
+    tagdir
+        A :term:`tag` as represented in a :term:`collection` as a directory.
+
     filedir
         A filedir is how you access the intersection of the :term:`tags <tag>` in a path. By default, it is the
         mathematical symbol for set intersection, ``⋂``

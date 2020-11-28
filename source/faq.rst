@@ -269,3 +269,8 @@ using tags to their fullest potential.  If that means adding a hierarchical abst
 Who made your logo?
 ============================================================================
 I did. You can see the source blender file I used to build the logo in the ``logo/`` directory of this repo.
+
+Why is the Linux app an AppImage?
+============================================================================
+I tried to figure out doing a debian package, but I found the process very difficult. I still want to have a debian
+package at some point, since they are easy to upgrade, but I need someone to help me with that.

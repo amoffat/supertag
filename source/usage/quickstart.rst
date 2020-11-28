@@ -62,7 +62,7 @@ contents will be the *files* of the intersection of the tags in your current pat
 .. image:: ../images/quickstart/intersection.png
 
 Let's add a couple more tags, but this time, let's use some of our native system binaries. First
-let's create some :term:`tagdirs` to ensure that we have somewhere to link to:
+let's create some :term:`tagdirs <tagdir>` to ensure that we have somewhere to link to:
 
 .. code-block:: bash
 
