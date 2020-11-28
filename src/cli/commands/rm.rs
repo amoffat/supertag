@@ -20,9 +20,9 @@ use clap::{Arg, SubCommand};
 pub(super) fn add_subcommands<'a, 'b>(app: clap::App<'a, 'b>) -> clap::App<'a, 'b> {
     app.subcommand(
         SubCommand::with_name("rm")
-            .about("Removes a file from some tags")
+            .about("Removes the last tag in a path from a specific file.")
             .arg(
-                Arg::with_name("path")
+                Arg::with_name("file")
                     .help("The file path to remove from the tags in the path")
                     .required(true)
                     .takes_value(true),
