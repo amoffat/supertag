@@ -14,7 +14,14 @@ After you've :ref:`installed <installation>` Supertag, you are ready to start us
 
     tag mount myfiles
 
-You should see something like:
+You may see an error on Linux, which requires the directory in ``/mnt`` to exist first:
+
+.. error::
+
+    | Mounting to "/mnt/myfiles"
+    | Error: Mount directory "/mnt/myfiles" missing. Please create it first before mounting.
+
+Make this directory yourself, change it to be owned by your user, and run the ``mount`` subcommand again. You should see something like:
 
 .. code-block::
 
@@ -98,14 +105,17 @@ open the tagpath ``impossible/⋂/``. Inside you will see ``waterfall.jpg``. Del
 
 .. image:: ../images/quickstart/delete_single.png
 
-As expected, the file is untagged from ``impossible`` because that is where you deleted the file from. Following this
-logic, you may think that you can also untag a file from *multiple* tags at once, in the same way you can tag a file
-with multiple tags at once, but this is not the case---with deletions, Supertag will only remove the *last* tag in the
-tagpath from the file, and it will preserve the other tags.
+As expected, the file is untagged from ``impossible`` because that is where you deleted the file from.
 
-However, if you wish to remove multiple tags at once, you can use the ``tag`` binary:
+.. note::
+    Following this logic, you may think that you can also untag a file from *multiple* tags at once, in the same way you can tag a file with multiple tags at once, but this is not the case---with deletions, Supertag will only remove the *last* tag in the tagpath from the file, and it will preserve the other tags.
+
+Now that we're done, let's go ahead and unmount our collection. Predictably, this is accomplished with the unmount
+subcommand:
 
 .. code-block:: bash
 
-    tag rm /mnt/myfiles/waterfall
+    tag unmount myfiles
 
+That's it for the quickstart! You now know how to mount, unmount, tag and untag. For more advanced usages, see the
+remaining sections.
