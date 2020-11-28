@@ -43,7 +43,7 @@ use std::time::Duration;
 use supertag::common::err::STagResult;
 use supertag::common::log::setup_logger;
 use supertag::common::notify::uds::UDSNotifier;
-use supertag::common::notify::Listener;
+use supertag::common::notify::{Listener, Notifier};
 use supertag::common::types::file_perms::UMask;
 use supertag::common::types::note::Note;
 use supertag::common::{get_device_inode, has_ext_prefix, settings};
@@ -417,6 +417,16 @@ impl TestHelper {
 
         let mut s = String::new();
         std::io::stdin().read_line(&mut s).unwrap();
+    }
+
+    pub fn assert_no_note(&self) {
+        let listener = self
+            .notifier
+            .lock()
+            .listener()
+            .expect("Couldn't get listener");
+
+        assert_eq!(listener.note_count(), 0);
     }
 
     pub fn assert_note<L: Listener>(

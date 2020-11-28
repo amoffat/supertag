@@ -47,9 +47,14 @@ pub const MAX_CONN: u32 = 50;
 
 /// Returns a correct connection with a very permissive contention handler
 pub fn get_conn<P: AsRef<Path>>(db_path: P) -> Result<Connection> {
-    let conn = Connection::open(db_path)?;
+    trace!(target: SQL_TAG, "Opening {:?}", db_path.as_ref());
+    let conn = Connection::open(&db_path)?;
+    trace!(target: SQL_TAG, "Opened {:?}", db_path.as_ref());
+
+    trace!(target: SQL_TAG, "Enabling foreign keys");
     // so we get cascading deletes in our relationship tables
     conn.execute("PRAGMA foreign_keys = 1", NO_PARAMS)?;
+    trace!(target: SQL_TAG, "Installing busy handler");
     conn.busy_handler(Some(|num| -> bool {
         if num >= MAX_CONN as i32 {
             error!(target: SQL_TAG, "Timed out waiting for connection lock");

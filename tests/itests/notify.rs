@@ -24,6 +24,7 @@ use supertag::common::notify::{Listener, Notifier};
 use supertag::common::types::note::Note;
 
 #[test]
+#[cfg(target_os = "linux")]
 /// Tests that copying a file (non-alias) launches a notification
 fn test_bad_copy() -> TestResult {
     let th = TestHelper::new(None);
@@ -51,11 +52,6 @@ fn test_bad_copy() -> TestResult {
     );
 
     match res {
-        // we use NotFound here because on macos, a failure is only detected when we try to do something like chmod
-        // on the created file. not sure why macos even tries to do the chmod, but it's where the failure occurs
-        #[cfg(target_os = "macos")]
-        Err(e) if e.kind() == std::io::ErrorKind::NotFound => {}
-        #[cfg(target_os = "linux")]
         Err(e) if e.kind() == std::io::ErrorKind::Other => {}
         Err(e) => panic!("Wrong error: {:?}", e),
         Ok(_) => panic!("Should have had an error"),

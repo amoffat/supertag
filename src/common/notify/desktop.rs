@@ -53,7 +53,6 @@ impl DesktopNotifier {
 
         let mut base_note = Notification::new();
 
-        #[cfg(target_os = "linux")]
         if let Some(icon) = &self.icon {
             base_note.icon(&icon.to_string_lossy());
         }
@@ -126,5 +125,9 @@ impl Listener for () {
 
     fn wait_for(&mut self, _note: &Note, _timeout: Duration, _marker: usize) -> bool {
         unimplemented!()
+    }
+
+    fn note_count(&self) -> usize {
+        0
     }
 }

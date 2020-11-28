@@ -137,4 +137,8 @@ impl Listener for TestListener {
             std::thread::sleep(std::time::Duration::from_millis(1000));
         }
     }
+
+    fn note_count(&self) -> usize {
+        self.notes.lock().unwrap().len()
+    }
 }

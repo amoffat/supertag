@@ -26,11 +26,19 @@ use clap::ArgMatches;
 use log::{debug, info};
 use nix::unistd::{fork, ForkResult};
 use parking_lot::Mutex;
-use rusqlite::Connection;
+use rusqlite::{Connection, Result as SqliteResult};
 use std::error::Error;
+use std::path::Path;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 use std::thread;
+
+fn run_migrations<P: AsRef<Path>>(db_path: P) -> SqliteResult<()> {
+    debug!(target: TAG, "Running migrations");
+    let mut conn = Connection::open(&db_path)?;
+    sql::migrations::migrate(&mut conn, &*common::version_str())?;
+    Ok(())
+}
 
 pub fn handle(args: &ArgMatches, mut settings: Settings) -> Result<(), Box<dyn Error>> {
     info!(target: TAG, "Running mount");
@@ -47,17 +55,6 @@ pub fn handle(args: &ArgMatches, mut settings: Settings) -> Result<(), Box<dyn E
     }
 
     let db_path = settings.db_file(col);
-
-    let mut conn = match Connection::open(&db_path) {
-        Err(_why) => return Err("Couldn't open database".into()),
-        Ok(c) => c,
-    };
-
-    debug!(target: TAG, "Running migrations");
-    sql::migrations::migrate(&mut conn, &*common::version_str())?;
-
-    let conn_pool = ThreadConnPool::new(db_path.clone());
-
     let share_settings = Arc::new(settings);
 
     let volicon = share_settings.volicon();
@@ -65,9 +62,15 @@ pub fn handle(args: &ArgMatches, mut settings: Settings) -> Result<(), Box<dyn E
     let mount_conf = fuse::util::make_mount_config(col, &db_path);
 
     let background = !args.is_present("foreground");
-    opener::open(&mountpoint)?;
+
+    if mountpoint.exists() {
+        opener::open(&mountpoint)?;
+    } else {
+        opener::open(share_settings.supertag_dir())?;
+    }
 
     if background {
+        let conn_pool = ThreadConnPool::new(db_path.clone());
         debug!(target: TAG, "Forking into the background...");
         match fork().expect("Fork failed") {
             ForkResult::Parent { child } => {
@@ -76,11 +79,23 @@ pub fn handle(args: &ArgMatches, mut settings: Settings) -> Result<(), Box<dyn E
                 Ok(())
             }
             ForkResult::Child => {
+                // due to some weird bug on macos with rusqlite, we *cannot* do anything with the
+                // database before we fork into the child, otherwise there is some kind of deadlock
+                // with opening the database in the child process.
+                //
+                // i haven't been able to hunt down the cause of this yet, but it occurs even when
+                // i am very careful to close + cleanup the database connection that existed in
+                // the parent process. as such, we do the migrations here, to avoid the deadlock
+                run_migrations(&db_path)?;
+
+                debug!(target: TAG, "Creating notifier");
                 let notifier = Arc::new(Mutex::new(DesktopNotifier::new(
                     share_settings.notification_icon(),
                 )));
 
+                debug!(target: TAG, "Creating TagFilesystem");
                 let fsh = fuse::TagFilesystem::new(share_settings, conn_pool, notifier);
+                debug!(target: TAG, "Mounting filesystem");
                 let mount_handle = fuse_sys::mount(&mountpoint, fsh, false, fuse_conf, mount_conf)?;
                 debug!(target: TAG, "Waiting on mount handle");
                 mount_handle.lock().wait();
@@ -89,6 +104,9 @@ pub fn handle(args: &ArgMatches, mut settings: Settings) -> Result<(), Box<dyn E
             }
         }
     } else {
+        run_migrations(&db_path)?;
+
+        let conn_pool = ThreadConnPool::new(db_path.clone());
         info!(
             target: TAG,
             "Mounting {} to {}",

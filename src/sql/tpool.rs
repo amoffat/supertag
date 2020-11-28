@@ -84,6 +84,7 @@ impl ThreadConnPool {
 
                 trace!(target: TAG, "Creating db connection");
                 let new_raw_conn = self.raw_conn();
+                trace!(target: TAG, "Created db connection");
 
                 let new_conn = Arc::new(Mutex::new(RefCell::new(new_raw_conn)));
                 trace!(target: TAG, "Acquiring write lock...");

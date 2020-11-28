@@ -52,4 +52,7 @@ pub trait Listener {
         idx: usize,
     ) -> Option<(Note, usize)>;
     fn wait_for(&mut self, note: &Note, timeout: Duration, marker: usize) -> bool;
+
+    /// The number of notes the listener has seen
+    fn note_count(&self) -> usize;
 }

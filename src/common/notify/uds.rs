@@ -296,4 +296,8 @@ impl Listener for UDSListener {
         self.wait_for_pred(|cand| cand == note, timeout, idx)
             .is_some()
     }
+
+    fn note_count(&self) -> usize {
+        self.buffer.lock().len()
+    }
 }

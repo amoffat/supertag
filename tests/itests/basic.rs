@@ -56,6 +56,10 @@ fn _test_basic_tagging(th: TestHelper) -> TestResult {
     th.assert_path_exists(linked.link_filedir_path(&["t1"], false));
     th.assert_count(&["t1"], 1);
 
+    // this was intended to catch macos which, in a non-test environment, seems to emit bad_copy
+    // notes even on legitimate symlinks. however, we haven't been able to make this assertion
+    // fail on mac
+    th.assert_no_note();
     Ok(())
 }
 

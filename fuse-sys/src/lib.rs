@@ -1724,6 +1724,10 @@ where
         join_handle = thread::Builder::new()
             .name("fuse_loop".to_string())
             .spawn(move || {
+                debug!(
+                    target: FUSE_TAG,
+                    "Creating fuse handle, serial_ops: {}", serial_ops
+                );
                 let handle = {
                     if serial_ops {
                         // a single-threaded blocking event dispatch loop
@@ -1743,7 +1747,7 @@ where
                 debug!(target: FUSE_TAG, "Stopped fuse_loop thread");
                 handle
             })
-            .expect("Coudln't spawn join thread");
+            .expect("Couldn't spawn join thread");
         debug!(
             target: FUSE_TAG,
             "Started fuse_loop thread with id {:?}",
