@@ -42,6 +42,9 @@ Supertag is a tag-based file system, written in `Rust <https://www.rust-lang.org
 that provides a unique view of your files by removing the
 hierarchy constraints typically imposed on files and folders.
 
+Long story short, it allows you to browse your files through intersections constraints, much like you could do with a
+relational database.
+
 Below, the file path ``/A/B/C`` yields the :term:`intersection` of all of the files that have been tagged with the
 tags ``A``, ``B``, and ``C``. Notice that the resulting files do not live *inside* of the full path,
 they simply appear there because they've been tagged with each part of the file path.

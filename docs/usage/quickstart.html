@@ -177,6 +177,11 @@
             
   <div class="section" id="quickstart">
 <span id="id1"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This quickstart was performed on Linux, but most instructions should be relatively similar in MacOS, besides a
+few of the file browser GUI instructions, which you will need to adapt to Finder.</p>
+</div>
 <p>After you’ve <a class="reference internal" href="../installation.html#installation"><span class="std std-ref">installed</span></a> Supertag, you are ready to start using it. First, let’s mount a new
 <a class="reference internal" href="../glossary.html#term-collection"><span class="xref std std-term">collection</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag mount myfiles
@@ -205,14 +210,17 @@ use it to test out tagging:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag ln waterfall.jpg escher/waterfall/architecture
 </pre></div>
 </div>
-<p>Now let’s browse to <code class="docutils literal notranslate"><span class="pre">/mnt/myfiles</span></code> and explore what Supertag did. Supertag created 3 new tags and represented them as directories:</p>
+<p>Now let’s browse to <code class="docutils literal notranslate"><span class="pre">/mnt/myfiles</span></code> and explore what Supertag did. Supertag created 3 new tags—representing
+them as directories—and then linked <code class="docutils literal notranslate"><span class="pre">waterfall.jpg</span></code> into each of those directories:</p>
 <img alt="../_images/3tags.png" src="../_images/3tags.png" />
 <p>Click into <code class="docutils literal notranslate"><span class="pre">waterfall</span></code>. You’ll see the following directories listed:</p>
 <img alt="../_images/subdirs.png" src="../_images/subdirs.png" />
 <p>What’s happening here is Supertag is showing <code class="docutils literal notranslate"><span class="pre">escher</span></code> and <code class="docutils literal notranslate"><span class="pre">architecture</span></code> as subdirectories
 because there exists at least 1 file (waterfall.jpg) that shares the tag <code class="docutils literal notranslate"><span class="pre">waterfall</span></code> as well as the
-tags <code class="docutils literal notranslate"><span class="pre">escher</span></code> and <code class="docutils literal notranslate"><span class="pre">architecture</span></code>.</p>
-<p>You’ll also notice a funny directory named <code class="docutils literal notranslate"><span class="pre">⋂</span></code>. This directory means “the intersection of.” Its
+tags <code class="docutils literal notranslate"><span class="pre">escher</span></code> and <code class="docutils literal notranslate"><span class="pre">architecture</span></code>. In other words, these directories exist “underneath” <code class="docutils literal notranslate"><span class="pre">waterfall</span></code> because
+they share files <em>with</em> <code class="docutils literal notranslate"><span class="pre">waterfall</span></code>.</p>
+<p>You’ll also notice a funny directory named <code class="docutils literal notranslate"><span class="pre">⋂</span></code>. This directory means “the intersection of” (in fact, it is the
+math symbol for that concept). Its
 contents will be the <em>files</em> of the intersection of the tags in your current path:</p>
 <img alt="../_images/intersection.png" src="../_images/intersection.png" />
 <p>Let’s add a couple more tags, but this time, let’s use some of our native system binaries. First
@@ -231,6 +239,18 @@ let’s create some <a class="reference internal" href="../glossary.html#term-ta
 <p>We could have created our tags separately with individual mkdir commands, and also linked
 the photo to those two tags with individual ln commands, but I wanted to demonstrate the
 concept of <a class="reference internal" href="../glossary.html#term-pinning"><span class="xref std std-term">pinning</span></a>, as well as applying multiple tags at once.</p>
+</div>
+<p>Now let us remove a file from a single tag. To do this, first browse from the <em>top-level</em> of your collection and
+open the tagpath <code class="docutils literal notranslate"><span class="pre">impossible/⋂/</span></code>. Inside you will see <code class="docutils literal notranslate"><span class="pre">waterfall.jpg</span></code>. Delete it using your file browser’s
+“permanent delete” feature, which is sometimes the shift + delete key:</p>
+<img alt="../_images/delete_single.png" src="../_images/delete_single.png" />
+<p>As expected, the file is untagged from <code class="docutils literal notranslate"><span class="pre">impossible</span></code> because that is where you deleted the file from. Following this
+logic, you may think that you can also untag a file from <em>multiple</em> tags at once, in the same way you can tag a file
+with multiple tags at once, but this is not the case—with deletions, Supertag will only remove the <em>last</em> tag in the
+tagpath from the file, and it will preserve the other tags.</p>
+<p>However, if you wish to remove multiple tags at once, you can use the <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag rm /mnt/myfiles/waterfall
+</pre></div>
 </div>
 </div>
 

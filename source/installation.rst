@@ -16,16 +16,28 @@ This will install the Supertag binary and set up all dependencies for you.
 MacOS
 =====
 
-Install `OSXFuse <https://osxfuse.github.io/>`_. Supertag is built on the
+The following has been tested on MacOS 10.15 (Catalina).
+
+First, make sure you have Homebrew installed:
+
+.. code-block:: bash
+
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
+Now install `OSXFuse <https://osxfuse.github.io/>`_. Supertag is built on the
 `FUSE <https://en.wikipedia.org/wiki/Filesystem_in_Userspace>`_ platform, and OSXFuse is MacOS's port of it:
 
 .. code-block:: bash
 
     brew cask install osxfuse
 
-Now go to ``System Preferences -> Security & Privacy -> General`` and click "Allow" for "Benjamin Fleischer".
-Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.
-You will need to reboot.
+.. note::
+    You may need to go to ``System Preferences -> Security & Privacy -> General`` and click "Allow" for
+    "Benjamin Fleischer" to complete the installation of OSXFuse.
+    Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.
+    Finally, you will need to reboot to enable the kernel extension, although I was able to use Supertag on
+    a fresh Catalina without reboot. YMMV
 
 Now you're ready to install Supertag:
 
@@ -75,18 +87,6 @@ Make sure you have Homebrew installed:
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Now install Rust:
-
-.. code-block:: bash
-
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-Install pkg-config, which will help us compile things:
-
-.. code-block:: bash
-
-    brew install pkg-config
-
 Install `OSXFuse <https://osxfuse.github.io/>`_. Supertag is built on the
 `FUSE <https://en.wikipedia.org/wiki/Filesystem_in_Userspace>`_ platform, and OSXFuse is MacOS's port of it:
 
@@ -97,6 +97,13 @@ Install `OSXFuse <https://osxfuse.github.io/>`_. Supertag is built on the
 Now go to ``System Preferences -> Security & Privacy -> General`` and click "Allow" for "Benjamin Fleischer".
 Benjamin Fleischer is the author of OSXFuse, and OSXFuse needs to be explicitly confirmed as trusted software.
 You will need to reboot.
+
+Now install all of the necessary dependencies listed in the official Supertag formula:
+
+.. code-block:: bash
+
+    brew install --only-dependencies brew install amoffat/rnd/supertag
+
 
 Linux
 =====

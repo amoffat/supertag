@@ -12,7 +12,7 @@ MacOS
 =====
 
 To link a file with Finder, you can drag and drop, but you must hold the option and command keys (⌥ + ⌘) while dropping.
-This will create a link (specifically a :ref:`MacOS alias`) when you drop the file into Supertag:
+This will create a link (specifically a :ref:`MacOS alias <macos_alias>`) when you drop the file into Supertag:
 
 Linux
 =====

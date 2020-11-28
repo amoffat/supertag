@@ -3,6 +3,10 @@
 Quickstart
 ###########
 
+.. note::
+    This quickstart was performed on Linux, but most instructions should be relatively similar in MacOS, besides a
+    few of the file browser GUI instructions, which you will need to adapt to Finder.
+
 After you've :ref:`installed <installation>` Supertag, you are ready to start using it. First, let's mount a new
 :term:`collection`:
 
@@ -44,7 +48,8 @@ Now let's tag it using our tag binary:
 
     tag ln waterfall.jpg escher/waterfall/architecture
 
-Now let's browse to ``/mnt/myfiles`` and explore what Supertag did. Supertag created 3 new tags and represented them as directories:
+Now let's browse to ``/mnt/myfiles`` and explore what Supertag did. Supertag created 3 new tags---representing
+them as directories---and then linked ``waterfall.jpg`` into each of those directories:
 
 .. image:: ../images/quickstart/3tags.png
 
@@ -54,9 +59,11 @@ Click into ``waterfall``. You'll see the following directories listed:
 
 What's happening here is Supertag is showing ``escher`` and ``architecture`` as subdirectories
 because there exists at least 1 file (waterfall.jpg) that shares the tag ``waterfall`` as well as the
-tags ``escher`` and ``architecture``.
+tags ``escher`` and ``architecture``. In other words, these directories exist "underneath" ``waterfall`` because
+they share files *with* ``waterfall``.
 
-You'll also notice a funny directory named ``⋂``. This directory means "the intersection of." Its
+You'll also notice a funny directory named ``⋂``. This directory means "the intersection of" (in fact, it is the
+math symbol for that concept). Its
 contents will be the *files* of the intersection of the tags in your current path:
 
 .. image:: ../images/quickstart/intersection.png
@@ -83,4 +90,22 @@ This added 2 more tags to our photo:
     We could have created our tags separately with individual mkdir commands, and also linked
     the photo to those two tags with individual ln commands, but I wanted to demonstrate the
     concept of :term:`pinning`, as well as applying multiple tags at once.
+
+
+Now let us remove a file from a single tag. To do this, first browse from the *top-level* of your collection and
+open the tagpath ``impossible/⋂/``. Inside you will see ``waterfall.jpg``. Delete it using your file browser's
+"permanent delete" feature, which is sometimes the shift + delete key:
+
+.. image:: ../images/quickstart/delete_single.png
+
+As expected, the file is untagged from ``impossible`` because that is where you deleted the file from. Following this
+logic, you may think that you can also untag a file from *multiple* tags at once, in the same way you can tag a file
+with multiple tags at once, but this is not the case---with deletions, Supertag will only remove the *last* tag in the
+tagpath from the file, and it will preserve the other tags.
+
+However, if you wish to remove multiple tags at once, you can use the ``tag`` binary:
+
+.. code-block:: bash
+
+    tag rm /mnt/myfiles/waterfall
 
