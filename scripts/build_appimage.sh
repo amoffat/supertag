@@ -9,7 +9,7 @@ dist="$3"
 supertag="$DIR"/..
 data="$supertag"/data/appimage
 signkey="EB19C5A7D839413DC078E074D2D5C7DFE8DA08B1"
-appimage_name="supertag-v$version-x86_64.AppImage"
+appimage_name="supertag-x86_64.AppImage"
 
 cd "$supertag"
 
