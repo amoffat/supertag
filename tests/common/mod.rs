@@ -408,12 +408,15 @@ impl TestHelper {
             self.project_directories.base().display(),
         );
 
-        let _ = std::process::Command::new("thunar")
-            .arg(self.real_mountpoint())
-            .spawn();
-        let _ = std::process::Command::new("sqlitebrowser")
-            .arg(self.settings.db_file(&self.collection))
-            .spawn();
+        #[cfg(target_os = "linux")]
+        {
+            let _ = std::process::Command::new("thunar")
+                .arg(self.real_mountpoint())
+                .spawn();
+            let _ = std::process::Command::new("sqlitebrowser")
+                .arg(self.settings.db_file(&self.collection))
+                .spawn();
+        }
 
         let mut s = String::new();
         std::io::stdin().read_line(&mut s).unwrap();
