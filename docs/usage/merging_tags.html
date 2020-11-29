@@ -187,21 +187,21 @@ tagpath.</p>
 <p>The basic idea is that renaming a tagdir only applies to the files captured by the tagpath’s intersection. For example,
 in the following structure:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">/</span>
-    <span class="n">b</span><span class="o">.</span><span class="n">pdf</span>
-    <span class="n">t2</span><span class="o">/</span>
-        <span class="n">a</span><span class="o">.</span><span class="n">pdf</span>
+  <span class="n">b</span><span class="o">.</span><span class="n">pdf</span>
+  <span class="n">t2</span><span class="o">/</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">pdf</span>
 <span class="n">t3</span><span class="o">/</span>
-    <span class="n">t4</span><span class="o">/</span>
-        <span class="n">c</span><span class="o">.</span><span class="n">pdf</span>
+  <span class="n">t4</span><span class="o">/</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">pdf</span>
 </pre></div>
 </div>
 <p>If we rename <code class="docutils literal notranslate"><span class="pre">t1/t2/</span></code> to <code class="docutils literal notranslate"><span class="pre">t3/t4/</span></code>, we end up with the following structure:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">/</span>
-    <span class="n">b</span><span class="o">.</span><span class="n">pdf</span>
+  <span class="n">b</span><span class="o">.</span><span class="n">pdf</span>
 <span class="n">t3</span><span class="o">/</span>
-    <span class="n">t4</span><span class="o">/</span>
-        <span class="n">c</span><span class="o">.</span><span class="n">pdf</span>
-        <span class="n">a</span><span class="o">.</span><span class="n">pdf</span>
+  <span class="n">t4</span><span class="o">/</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">pdf</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">pdf</span>
 </pre></div>
 </div>
 <p>The result is that <code class="docutils literal notranslate"><span class="pre">a.pdf</span></code> (and not <code class="docutils literal notranslate"><span class="pre">b.pdf</span></code>) was untagged by <code class="docutils literal notranslate"><span class="pre">t2</span></code> and then re-tagged as <code class="docutils literal notranslate"><span class="pre">t3</span></code> and <code class="docutils literal notranslate"><span class="pre">t4</span></code>.</p>

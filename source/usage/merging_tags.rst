@@ -12,23 +12,23 @@ in the following structure:
 .. code-block::
 
     t1/
-        b.pdf
-        t2/
-            a.pdf
+      b.pdf
+      t2/
+        a.pdf
     t3/
-        t4/
-            c.pdf
+      t4/
+        c.pdf
 
 If we rename ``t1/t2/`` to ``t3/t4/``, we end up with the following structure:
 
 .. code-block::
 
     t1/
-        b.pdf
+      b.pdf
     t3/
-        t4/
-            c.pdf
-            a.pdf
+      t4/
+        c.pdf
+        a.pdf
 
 The result is that ``a.pdf`` (and not ``b.pdf``) was untagged by ``t2`` and then re-tagged as ``t3`` and ``t4``.
 
