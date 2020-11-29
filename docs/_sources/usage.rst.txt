@@ -17,8 +17,6 @@ functions.
 
 We'll go through each of the operations, as well as each of the 3 ways of accomplishing them, if applicable.
 
-The first thing you'll want to do is mount the filesystem, so start :ref:`here <mounting>`.
-
 .. toctree::
 
     usage/quickstart

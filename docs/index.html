@@ -174,9 +174,8 @@
 <a class="reference external image-reference" href="https://amoffat.github.io/supertag/"><img alt="Docs" src="https://img.shields.io/badge/Documentation-v0.1.1-brightgreen?style=flat-square&amp;logo=read-the-docs&amp;logoColor=white&amp;color=1a6cff" /></a>
 <p>Supertag is a tag-based file system, written in <a class="reference external" href="https://www.rust-lang.org/">Rust</a>,
 that provides a unique view of your files by removing the
-hierarchy constraints typically imposed on files and folders.</p>
-<p>Long story short, it allows you to browse your files through intersections constraints, much like you could do with a
-relational database.</p>
+hierarchy constraints typically imposed on files and folders. In other words, it allows you to think about your
+files not as objects <em>stored</em> in folders, but as objects that can be <em>filtered</em> by folders.</p>
 <p>Below, the file path <code class="docutils literal notranslate"><span class="pre">/A/B/C</span></code> yields the <a class="reference internal" href="glossary.html#term-intersection"><span class="xref std std-term">intersection</span></a> of all of the files that have been tagged with the
 tags <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, and <code class="docutils literal notranslate"><span class="pre">C</span></code>. Notice that the resulting files do not live <em>inside</em> of the full path,
 they simply appear there because they’ve been tagged with each part of the file path.

@@ -91,7 +91,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../usage.html">Usage</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Mounting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mounting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unmounting">Unmounting</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="creating_tags.html">Creating tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linking.html">Linking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="removing_tags.html">Removing tags</a></li>
@@ -177,16 +180,31 @@
             
   <div class="section" id="mounting">
 <span id="id1"></span><h1>Mounting<a class="headerlink" href="#mounting" title="Permalink to this headline">¶</a></h1>
-<p>Mounting attaches a collection <a class="reference internal" href="../glossary.html#term-collection"><span class="xref std std-term">collection</span></a> to the filesystem so that you can use it.</p>
+<p>Mounting attaches a collection <a class="reference internal" href="../glossary.html#term-collection"><span class="xref std std-term">collection</span></a> to the filesystem so that you can use it. It can only be done on
+the commandline, using the <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag mount myfiles
 </pre></div>
 </div>
-<p>This will mount a collection named <code class="docutils literal notranslate"><span class="pre">myfiles</span></code> to your system’s mount directory. If the collection doesn’t exist, it
+<p>This will mount a collection named <code class="docutils literal notranslate"><span class="pre">myfiles</span></code> to your system’s mount directory and fork into the background.
+Your mount directory can be changed with <a class="reference internal" href="../config.html#mount-base-dir"><span class="std std-ref">mount.base_dir</span></a>.
+If the collection doesn’t exist, it
 will be created for you. The result is that you will have a folder available at either <code class="docutils literal notranslate"><span class="pre">/Volumes/myfiles</span></code> (on Mac)
 or <code class="docutils literal notranslate"><span class="pre">/mnt/myfiles</span></code> (on Linux).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you’re on Linux, you’ll need to make sure <code class="docutils literal notranslate"><span class="pre">/mnt/myfiles</span></code> exists and is owned by your user, before you mount.</p>
+<p>If you’re on Linux, you’ll need to make sure <code class="docutils literal notranslate"><span class="pre">/mnt/myfiles</span></code> exists and is owned by your user, before you mount.
+On MacOS, this doesn’t seem to be necessary.</p>
+</div>
+<p>You can also mount your collection without forking a background process using the <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag. In this case,
+<code class="docutils literal notranslate"><span class="pre">SIGINT</span></code> will unmount and end the process.</p>
+<div class="section" id="unmounting">
+<h2>Unmounting<a class="headerlink" href="#unmounting" title="Permalink to this headline">¶</a></h2>
+<p>Similar to mounting, you can unmount:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag unmount myfiles
+</pre></div>
+</div>
+<p>This will unmount the <code class="docutils literal notranslate"><span class="pre">myfiles</span></code> collection. The collection argument is optional, so if you wish to unmount all of
+your collections, don’t specify a collection to the unmount subcommand.</p>
 </div>
 </div>
 

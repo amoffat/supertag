@@ -64,6 +64,8 @@ mount
 ***********
 This section contains details related to the mounting of a SuperTag collection.
 
+.. _mount_base_dir:
+
 base_dir
 ================================
 By default, this directory is determined from your platform.  On Linux, for example, it is ``/mnt``.  On MacOS, it is
