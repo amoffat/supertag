@@ -43,7 +43,7 @@ mtime
     The modification time of the file record.
 
 alias_file
-    This column is only used on MacOS. See :ref:`MacOS Aliases <macos_aliases>` for an explanation.
+    This column is only used on MacOS. See :ref:`MacOS Aliases <macos_alias>` for an explanation.
 
 
 .. _tags_table:
@@ -80,7 +80,7 @@ file_tag
 ********
 
 The many-to-many intermediate table for :ref:`files <files_table>` and :ref:`tags <tags_table>`. A file can be tagged
-with many tags, and a tag can apply to many files. A file_tag record is inserted when a file is :ref:`linked <linking_files>`
+with many tags, and a tag can apply to many files. A file_tag record is inserted when a file is :ref:`linked <linking>`
 to a tag.
 
 ts
@@ -98,10 +98,13 @@ gid
 permissions
     The permissions of the tag's directory, derived from the umask of the user who created it.
 
+
+.. _tag_groups_table:
+
 tag_groups
 **********
 
-The ``tag_groups`` table stores :ref:`tag groups`.
+The ``tag_groups`` table stores :ref:`tag groups <tag_groups>`.
 
 name
     The tag group name. Surprise!

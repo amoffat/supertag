@@ -180,7 +180,7 @@ relationships.</p>
 <div class="section" id="files">
 <span id="files-table"></span><h2>files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">files</span></code> table contains files names that exist inside an entire <a class="reference internal" href="glossary.html#term-collection"><span class="xref std std-term">collection</span></a>. A file record is inserted
-when a new file is <span class="xref std std-ref">linked</span> into Supertag.</p>
+when a new file is <a class="reference internal" href="usage/linking.html#linking"><span class="std std-ref">linked</span></a> into Supertag.</p>
 <dl class="simple">
 <dt>device</dt><dd><p>The device id where the target file resides. Together with the inode column, this can be used to reliably point to
 any file.</p>
@@ -198,7 +198,7 @@ when it was imported or linked.</p>
 </dd>
 <dt>mtime</dt><dd><p>The modification time of the file record.</p>
 </dd>
-<dt>alias_file</dt><dd><p>This column is only used on MacOS. See <span class="xref std std-ref">MacOS Aliases</span> for an explanation.</p>
+<dt>alias_file</dt><dd><p>This column is only used on MacOS. See <a class="reference internal" href="os_behavior.html#macos-alias"><span class="std std-ref">MacOS Aliases</span></a> for an explanation.</p>
 </dd>
 </dl>
 </div>
@@ -206,7 +206,7 @@ when it was imported or linked.</p>
 <span id="tags-table"></span><h2>tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">tags</span></code> table represents all of the <a class="reference internal" href="glossary.html#term-tag"><span class="xref std std-term">tags</span></a> in the <a class="reference internal" href="glossary.html#term-collection"><span class="xref std std-term">collection</span></a>. Every tag will have a
 corresponding folder at the top level of the <a class="reference internal" href="glossary.html#term-manifolder"><span class="xref std std-term">manifolder</span></a>. A tag record is inserted when a tag is
-<span class="xref std std-ref">created</span>.</p>
+<a class="reference internal" href="usage/creating_tags.html#creating-tags"><span class="std std-ref">created</span></a>.</p>
 <dl class="simple">
 <dt>tag_name</dt><dd><p>The tag name. Surprise!</p>
 </dd>
@@ -227,7 +227,7 @@ corresponding folder at the top level of the <a class="reference internal" href=
 <div class="section" id="file-tag">
 <h2>file_tag<a class="headerlink" href="#file-tag" title="Permalink to this headline">¶</a></h2>
 <p>The many-to-many intermediate table for <a class="reference internal" href="#files-table"><span class="std std-ref">files</span></a> and <a class="reference internal" href="#tags-table"><span class="std std-ref">tags</span></a>. A file can be tagged
-with many tags, and a tag can apply to many files. A file_tag record is inserted when a file is <span class="xref std std-ref">linked</span>
+with many tags, and a tag can apply to many files. A file_tag record is inserted when a file is <a class="reference internal" href="usage/linking.html#linking"><span class="std std-ref">linked</span></a>
 to a tag.</p>
 <dl class="simple">
 <dt>ts</dt><dd><p>The timestamp of when the record was created.</p>
@@ -243,8 +243,8 @@ to a tag.</p>
 </dl>
 </div>
 <div class="section" id="tag-groups">
-<h2>tag_groups<a class="headerlink" href="#tag-groups" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">tag_groups</span></code> table stores <span class="xref std std-ref">tag groups</span>.</p>
+<span id="tag-groups-table"></span><h2>tag_groups<a class="headerlink" href="#tag-groups" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">tag_groups</span></code> table stores <a class="reference internal" href="usage/tag_groups.html#tag-groups"><span class="std std-ref">tag groups</span></a>.</p>
 <dl class="simple">
 <dt>name</dt><dd><p>The tag group name. Surprise!</p>
 </dd>
@@ -262,9 +262,9 @@ to a tag.</p>
 </div>
 <div class="section" id="tag-group-tag">
 <h2>tag_group_tag<a class="headerlink" href="#tag-group-tag" title="Permalink to this headline">¶</a></h2>
-<p>The many-to-many intermediate table for <a class="reference internal" href="#tags-table"><span class="std std-ref">tags</span></a> and <span class="xref std std-ref">tag_groups</span>. A tag can
+<p>The many-to-many intermediate table for <a class="reference internal" href="#tags-table"><span class="std std-ref">tags</span></a> and <a class="reference internal" href="#tag-groups-table"><span class="std std-ref">tag_groups</span></a>. A tag can
 belong to many tag groups, and a tag group can contain many tags. A record for this table is inserted when the user
-<span class="xref std std-ref">creates a tag group</span>.</p>
+<a class="reference internal" href="usage/tag_groups.html#creating-taggroups"><span class="std std-ref">creates a tag group</span></a>.</p>
 <dl class="simple">
 <dt>ts</dt><dd><p>The timestamp of when the record was created.</p>
 </dd>

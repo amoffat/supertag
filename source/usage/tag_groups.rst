@@ -1,3 +1,5 @@
+.. _tag_groups:
+
 Tag groups
 ##########
 
@@ -73,6 +75,8 @@ all of the actors to the ``actors+/`` tag group, and all of the directors to the
 actor tag is displayed will be substituted by the ``actors+/`` tag group, and same with directors.
 
 In a way, it imposes a very limited 1-level hierarchy on tags, so that they can be more logically grouped together.
+
+.. _creating_taggroups:
 
 Creating
 ========

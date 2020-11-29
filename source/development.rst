@@ -120,7 +120,7 @@ the tag binary. Different ``OpMode`` may result in drastically different behavio
 
 - ``OpMode::CLI``: file is linked to tag by calling the ``supertag::ln`` function.
 - ``OpMode::MANUAL``: file is linked to the tag by calling the ``ln`` system binary.
-- ``OpMode::FINDER``: file is linked to the tag by creating and writing an :ref:`alias file`.
+- ``OpMode::FINDER``: file is linked to the tag by creating and writing an :ref:`alias file <macos_alias>`.
 
 In summary, try to write tests that cover the functionality you're testing from the different ways it can be used.
 

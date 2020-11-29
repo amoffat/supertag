@@ -9,9 +9,15 @@ The default config file:
     inode_char = "-"
     device_char = "﹫"
     sync_char = "\u007F"
-    filedir_str = "_"
+    filedir_str = "⋂"
+    filedir_cli_str = "_"
+    tag_group_str = "+"
 
     [mount]
+    base_dir = "<derived>"
+    uid = "<derived>"
+    gid = "<derived>"
+    permissions = "<derived>"
 
 Below, we will explain each section, and each value in each section, including values that are not defined in the
 default config file.
@@ -20,7 +26,7 @@ symbols
 ***********
 This section contains the various symbols that exist throughout SuperTag.
 
-inode_char
+inode_char, device_char
 ================================
 A typical :term:`fully-qualified symlink` SuperTag symlink file looks like
 this:
@@ -38,8 +44,21 @@ to sync a cache flush from a tagging process to the mounting daemon.
 filedir_str
 ================================
 
-This is the name of every filedir in a SuperTag collection.  It can be more than a single character.  For example,
-you might use the name "tag_intersections" instead of "_".
+This is the name of every :term:`filedir` in a SuperTag collection.  It can be more than a single character.  For example,
+you might use the string ``intersections`` instead of ``⋂``.
+
+filedir_cli_str
+================================
+
+Sometimes it is useful to have an alternate ``filedir_str`` for the commandline. For example, if you use ``⋂`` for
+your ``filedir_str``, you might notice that that is a hard character to type when you're in your terminal. The
+``filedir_cli_str`` serves as an alternate string that you can use on the commandline, in place of the ``filedir_str``
+when browsing your files.
+
+tag_group_str
+================================
+
+The string that *must* be appended to a directory name in order to make it a :term:`tag group`.
 
 mount
 ***********

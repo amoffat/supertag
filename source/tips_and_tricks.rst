@@ -11,7 +11,7 @@ for a detailed listing of each table.
 Tag Negations
 *************
 
-Sometimes it is useful to list all :ref:`intersections <intersection>` *sans* a tag. For example, if you wanted to
+Sometimes it is useful to list all :term:`intersections <intersection>` *sans* a tag. For example, if you wanted to
 list all files that are ``photos``, ``trips``, that are *not* tagged with ``seattle``, how would you do it? The answer
 is tag negations:
 
@@ -41,7 +41,7 @@ Suppose you have the following file structure:::
 
 Above, ``people`` is a tag group for the tags ``person-1``, ``person-2``, and ``person-3``. This means that wherever
 one of those tags would appear, the tag group will appear instead. So for example, if there exists an
-:ref:`intersection` between ``photos`` and ``person-1``, listing ``photos`` will show:::
+:term:`intersection` between ``photos`` and ``person-1``, listing ``photos`` will show:::
 
     photos/
         people/

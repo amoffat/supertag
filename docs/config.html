@@ -92,9 +92,11 @@
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Config</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#symbols">symbols</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#inode-char">inode_char</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inode-char-device-char">inode_char, device_char</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sync-char">sync_char</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#filedir-str">filedir_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filedir-cli-str">filedir_cli_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-group-str">tag_group_str</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#mount">mount</a><ul>
@@ -185,9 +187,15 @@
 <span class="n">inode_char</span> <span class="o">=</span> <span class="s">&quot;-&quot;</span>
 <span class="n">device_char</span> <span class="o">=</span> <span class="s">&quot;﹫&quot;</span>
 <span class="n">sync_char</span> <span class="o">=</span> <span class="s">&quot;\u007F&quot;</span>
-<span class="n">filedir_str</span> <span class="o">=</span> <span class="s">&quot;_&quot;</span>
+<span class="n">filedir_str</span> <span class="o">=</span> <span class="s">&quot;⋂&quot;</span>
+<span class="n">filedir_cli_str</span> <span class="o">=</span> <span class="s">&quot;_&quot;</span>
+<span class="n">tag_group_str</span> <span class="o">=</span> <span class="s">&quot;+&quot;</span>
 
 <span class="k">[mount]</span>
+<span class="n">base_dir</span> <span class="o">=</span> <span class="s">&quot;&lt;derived&gt;&quot;</span>
+<span class="n">uid</span> <span class="o">=</span> <span class="s">&quot;&lt;derived&gt;&quot;</span>
+<span class="n">gid</span> <span class="o">=</span> <span class="s">&quot;&lt;derived&gt;&quot;</span>
+<span class="n">permissions</span> <span class="o">=</span> <span class="s">&quot;&lt;derived&gt;&quot;</span>
 </pre></div>
 </div>
 <p>Below, we will explain each section, and each value in each section, including values that are not defined in the
@@ -195,8 +203,8 @@ default config file.</p>
 <div class="section" id="symbols">
 <h2>symbols<a class="headerlink" href="#symbols" title="Permalink to this headline">¶</a></h2>
 <p>This section contains the various symbols that exist throughout SuperTag.</p>
-<div class="section" id="inode-char">
-<h3>inode_char<a class="headerlink" href="#inode-char" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="inode-char-device-char">
+<h3>inode_char, device_char<a class="headerlink" href="#inode-char-device-char" title="Permalink to this headline">¶</a></h3>
 <p>A typical <a class="reference internal" href="glossary.html#term-fully-qualified-symlink"><span class="xref std std-term">fully-qualified symlink</span></a> SuperTag symlink file looks like
 this:</p>
 <p><code class="docutils literal notranslate"><span class="pre">rust_cheatsheet.png﹫64770-19022060</span></code></p>
@@ -209,8 +217,19 @@ to sync a cache flush from a tagging process to the mounting daemon.</p>
 </div>
 <div class="section" id="filedir-str">
 <h3>filedir_str<a class="headerlink" href="#filedir-str" title="Permalink to this headline">¶</a></h3>
-<p>This is the name of every filedir in a SuperTag collection.  It can be more than a single character.  For example,
-you might use the name “tag_intersections” instead of “_”.</p>
+<p>This is the name of every <a class="reference internal" href="glossary.html#term-filedir"><span class="xref std std-term">filedir</span></a> in a SuperTag collection.  It can be more than a single character.  For example,
+you might use the string <code class="docutils literal notranslate"><span class="pre">intersections</span></code> instead of <code class="docutils literal notranslate"><span class="pre">⋂</span></code>.</p>
+</div>
+<div class="section" id="filedir-cli-str">
+<h3>filedir_cli_str<a class="headerlink" href="#filedir-cli-str" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes it is useful to have an alternate <code class="docutils literal notranslate"><span class="pre">filedir_str</span></code> for the commandline. For example, if you use <code class="docutils literal notranslate"><span class="pre">⋂</span></code> for
+your <code class="docutils literal notranslate"><span class="pre">filedir_str</span></code>, you might notice that that is a hard character to type when you’re in your terminal. The
+<code class="docutils literal notranslate"><span class="pre">filedir_cli_str</span></code> serves as an alternate string that you can use on the commandline, in place of the <code class="docutils literal notranslate"><span class="pre">filedir_str</span></code>
+when browsing your files.</p>
+</div>
+<div class="section" id="tag-group-str">
+<h3>tag_group_str<a class="headerlink" href="#tag-group-str" title="Permalink to this headline">¶</a></h3>
+<p>The string that <em>must</em> be appended to a directory name in order to make it a <a class="reference internal" href="glossary.html#term-tag-group"><span class="xref std std-term">tag group</span></a>.</p>
 </div>
 </div>
 <div class="section" id="mount">
