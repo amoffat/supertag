@@ -95,7 +95,12 @@
 <li class="toctree-l2"><a class="reference internal" href="creating_tags.html">Creating tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linking.html">Linking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="removing_tags.html">Removing tags</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Merging tags</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Merging tags</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-browser-gui">File browser GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mv">mv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-binary">tag binary</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pinning.html">Pinning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tag_groups.html">Tag groups</a></li>
 </ul>
@@ -176,7 +181,55 @@
            <div itemprop="articleBody">
             
   <div class="section" id="merging-tags">
-<h1>Merging tags<a class="headerlink" href="#merging-tags" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Merging tags<a class="headerlink" href="#merging-tags" title="Permalink to this headline">¶</a></h1>
+<p>Merging tags is the process of combining the file <a class="reference internal" href="../glossary.html#term-intersection"><span class="xref std std-term">intersection</span></a> represented by one <a class="reference internal" href="../glossary.html#term-tagpath"><span class="xref std std-term">tagpath</span></a> into another
+tagpath.</p>
+<p>The basic idea is that renaming a tagdir only applies to the files captured by the tagpath’s intersection. For example,
+in the following structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">/</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">pdf</span>
+    <span class="n">t2</span><span class="o">/</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">pdf</span>
+<span class="n">t3</span><span class="o">/</span>
+    <span class="n">t4</span><span class="o">/</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>If we rename <code class="docutils literal notranslate"><span class="pre">t1/t2/</span></code> to <code class="docutils literal notranslate"><span class="pre">t3/t4/</span></code>, we end up with the following structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">/</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">pdf</span>
+<span class="n">t3</span><span class="o">/</span>
+    <span class="n">t4</span><span class="o">/</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">pdf</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>The result is that <code class="docutils literal notranslate"><span class="pre">a.pdf</span></code> (and not <code class="docutils literal notranslate"><span class="pre">b.pdf</span></code>) was untagged by <code class="docutils literal notranslate"><span class="pre">t2</span></code> and then re-tagged as <code class="docutils literal notranslate"><span class="pre">t3</span></code> and <code class="docutils literal notranslate"><span class="pre">t4</span></code>.</p>
+<p>It can be confusing at first, but when you think about it, there is an intuition behind it.</p>
+<div class="section" id="file-browser-gui">
+<h2>File browser GUI<a class="headerlink" href="#file-browser-gui" title="Permalink to this headline">¶</a></h2>
+<p>Select the tag in your file browser and perform the operation required to rename it. Now rename it to the tag you wish
+to merge it into.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re merging in the file browser, you will only be able to rename into a <em>single</em> destination tag, whereas
+other methods allow you to rename into multiple destination tags at once.</p>
+</div>
+</div>
+<div class="section" id="mv">
+<h2>mv<a class="headerlink" href="#mv" title="Permalink to this headline">¶</a></h2>
+<p>In the collection, simply move the tagdir to the name to the full destination path:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv /mnt/myfiles/pdf_documents /mnt/myfiles/pdfs
+</pre></div>
+</div>
+<p>Everything tagged with <code class="docutils literal notranslate"><span class="pre">pdf_documents</span></code> will now be tagged with <code class="docutils literal notranslate"><span class="pre">pdfs</span></code> instead.</p>
+</div>
+<div class="section" id="tag-binary">
+<h2>tag binary<a class="headerlink" href="#tag-binary" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag mv pdf_documents pdfs
+</pre></div>
+</div>
+</div>
 </div>
 
 

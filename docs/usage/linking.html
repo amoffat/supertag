@@ -99,8 +99,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#tag-binary"><code class="docutils literal notranslate"><span class="pre">tag</span></code> binary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ln"><code class="docutils literal notranslate"><span class="pre">ln</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-binary">tag binary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ln">ln</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="removing_tags.html">Removing tags</a></li>
@@ -186,7 +186,7 @@
             
   <div class="section" id="linking">
 <span id="id1"></span><h1>Linking<a class="headerlink" href="#linking" title="Permalink to this headline">¶</a></h1>
-<p>Linking is how you can <em>manually</em> associate a file with a <a class="reference internal" href="../glossary.html#term-tag"><span class="xref std std-term">tag</span></a>. The process is slightly different depending on
+<p>Linking is how you associate a file with a <a class="reference internal" href="../glossary.html#term-tag"><span class="xref std std-term">tag</span></a>. The process is slightly different depending on
 if you’re using MacOS or Linux, and whether you’re using the commandline, a file browser GUI, or the <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary.
 We’ll cover them all here.</p>
 <div class="section" id="file-browser-gui">
@@ -201,7 +201,7 @@ This will create a link (specifically a <a class="reference internal" href="../o
 </div>
 </div>
 <div class="section" id="tag-binary">
-<h2><code class="docutils literal notranslate"><span class="pre">tag</span></code> binary<a class="headerlink" href="#tag-binary" title="Permalink to this headline">¶</a></h2>
+<h2>tag binary<a class="headerlink" href="#tag-binary" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">tag</span></code> binary is straightforward:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tag ln ~/Documents/RustCheatSheet.pdf rust/documents/pdfs/cheet-sheets
 </pre></div>
@@ -209,11 +209,11 @@ This will create a link (specifically a <a class="reference internal" href="../o
 <p>When no <a class="reference internal" href="../glossary.html#term-collection"><span class="xref std std-term">collection</span></a> is explicitly specified, as above, the <a class="reference internal" href="../glossary.html#term-default-collection"><span class="xref std std-term">default collection</span></a> is used.
 The <a class="reference internal" href="../glossary.html#term-tagpath"><span class="xref std std-term">tagpath</span></a> is then considered relative to that collection. If you wish to specify a collection other than
 the default collection, specify the tagpath as an absolute path.</p>
-<p>Also, the tags do not have to exist, unlike other methods. If Supertag sees that a tag doesn’t exist, it will create
+<p>Also, the tags do not have to exist. If Supertag sees that a tag doesn’t exist, it will create
 it for you as part of the linking process.</p>
 </div>
 <div class="section" id="ln">
-<h2><code class="docutils literal notranslate"><span class="pre">ln</span></code><a class="headerlink" href="#ln" title="Permalink to this headline">¶</a></h2>
+<h2>ln<a class="headerlink" href="#ln" title="Permalink to this headline">¶</a></h2>
 <p>Linking a file with <code class="docutils literal notranslate"><span class="pre">ln</span></code> is straightforward and works as expected:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln ~/Documents/RustCheatSheet.pdf /mnt/programming/rust/documents/pdfs/cheat-sheets
 </pre></div>

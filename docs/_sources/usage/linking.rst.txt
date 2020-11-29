@@ -3,7 +3,7 @@
 Linking
 #######
 
-Linking is how you can *manually* associate a file with a :term:`tag`. The process is slightly different depending on
+Linking is how you associate a file with a :term:`tag`. The process is slightly different depending on
 if you're using MacOS or Linux, and whether you're using the commandline, a file browser GUI, or the ``tag`` binary.
 We'll cover them all here.
 
@@ -20,7 +20,7 @@ Linux
 =====
 
 
-``tag`` binary
+tag binary
 **************
 
 The ``tag`` binary is straightforward:
@@ -33,10 +33,10 @@ When no :term:`collection` is explicitly specified, as above, the :term:`default
 The :term:`tagpath` is then considered relative to that collection. If you wish to specify a collection other than
 the default collection, specify the tagpath as an absolute path.
 
-Also, the tags do not have to exist, unlike other methods. If Supertag sees that a tag doesn't exist, it will create
+Also, the tags do not have to exist. If Supertag sees that a tag doesn't exist, it will create
 it for you as part of the linking process.
 
-``ln``
+ln
 ******
 
 Linking a file with ``ln`` is straightforward and works as expected:

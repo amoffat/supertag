@@ -124,6 +124,23 @@ the tag binary. Different ``OpMode`` may result in drastically different behavio
 
 In summary, try to write tests that cover the functionality you're testing from the different ways it can be used.
 
+Debugging tests
+=====================
+
+There exists a super helpful method on the ``TestHelper`` struct: ``inspect()``. Anywhere in your test, if you call it,
+execution will stop and you will receive some debugging information related to your temporary collection's mountpoint:
+
+.. code-block::
+
+    db: /tmp/pd-m6lRH4/config/collections/col-IqO2UD/col-IqO2UD.db
+    mounted at: /tmp/col-IqO2UD
+    project dir: /tmp/pd-m6lRH4
+
+The test will then wait for a newline character on STDIN. This allows you to inspect the various aspects of the
+temporary filesystem to debug what could be going wrong. If you're on Linux, inspect will also open ``sqlitebrowser``
+and a file browser.
+
+
 When things go wrong
 =====================
 

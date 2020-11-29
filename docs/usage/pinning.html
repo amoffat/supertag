@@ -177,14 +177,17 @@
             
   <div class="section" id="pinning">
 <span id="id1"></span><h1>Pinning<a class="headerlink" href="#pinning" title="Permalink to this headline">¶</a></h1>
-<p>By default, the directory <cite>/studies/climate</cite> will only exist if there are files tagged with both <cite>studies</cite> and <cite>climate</cite>.
-This is because tagdirs are tag <em>intersections.</em>  If there are no files with both of those tags, that specific directory
-path won’t exist.  This is useful for navigating directories, because you will only
-see sub-tagdirs that are relevant to your current tagdir, but not so useful when populating the tagdirs for the first time.
+<p><a class="reference internal" href="../glossary.html#term-pinning"><span class="xref std std-term">Pinning</span></a> lets you create some nested tags even when no files live at the tags intersection.</p>
+<p>By default, the directory <code class="docutils literal notranslate"><span class="pre">/studies/climate</span></code> will only exist if there are files tagged with both <code class="docutils literal notranslate"><span class="pre">studies</span></code> and <code class="docutils literal notranslate"><span class="pre">climate</span></code>.
+This is because <a class="reference internal" href="../glossary.html#term-tagdir"><span class="xref std std-term">tagdirs</span></a> are tag <em>intersections</em>, meaning that if there are no files with both of those tags,
+that specific directory
+path won’t exist.  Having it be this way is useful for navigating directories, because you will only
+see sub-tagdirs that are relevant to your current tagdir. However, it is not so useful when populating the tagdirs for
+the first time, because you may want to navigate to the nested tagdirs before linking anything into them.
 To alleviate this problem, we use tagdir pinning.</p>
-<p>Pinning is creating a temporary “pin” in a tagdir path, so that you can navigate to it without requiring actual files to exist
-inside of it.  This allows you to create nested, ad-hoc tagdirs from a “save file” dialog.  Without tagdir pinning, you
-could not browse to <cite>/studies/climate</cite> unless there already existed files tagged with <cite>studies</cite> and <cite>climate</cite>.</p>
+<p>Pinning is creating a temporary “pin” in a <a class="reference internal" href="../glossary.html#term-tagpath"><span class="xref std std-term">tagpath</span></a>, so that you can navigate to it without requiring actual files to exist
+inside of it.  Without tagdir pinning, you
+could not browse to <code class="docutils literal notranslate"><span class="pre">/studies/climate</span></code> unless there already existed files tagged with <code class="docutils literal notranslate"><span class="pre">studies</span></code> and <code class="docutils literal notranslate"><span class="pre">climate</span></code>.</p>
 </div>
 
 

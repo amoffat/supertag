@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#running-tests">Running tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#writing-tests">Writing tests</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#supporting-all-usages">Supporting all usages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debugging-tests">Debugging tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#when-things-go-wrong">When things go wrong</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#cleaning-up-filesystems">Cleaning up filesystems</a></li>
 </ul>
@@ -283,6 +284,19 @@ the tag binary. Different <code class="docutils literal notranslate"><span class
 <li><p><code class="docutils literal notranslate"><span class="pre">OpMode::FINDER</span></code>: file is linked to the tag by creating and writing an <a class="reference internal" href="os_behavior.html#macos-alias"><span class="std std-ref">alias file</span></a>.</p></li>
 </ul>
 <p>In summary, try to write tests that cover the functionality you’re testing from the different ways it can be used.</p>
+</div>
+<div class="section" id="debugging-tests">
+<h3>Debugging tests<a class="headerlink" href="#debugging-tests" title="Permalink to this headline">¶</a></h3>
+<p>There exists a super helpful method on the <code class="docutils literal notranslate"><span class="pre">TestHelper</span></code> struct: <code class="docutils literal notranslate"><span class="pre">inspect()</span></code>. Anywhere in your test, if you call it,
+execution will stop and you will receive some debugging information related to your temporary collection’s mountpoint:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">:</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pd</span><span class="o">-</span><span class="n">m6lRH4</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">collections</span><span class="o">/</span><span class="n">col</span><span class="o">-</span><span class="n">IqO2UD</span><span class="o">/</span><span class="n">col</span><span class="o">-</span><span class="n">IqO2UD</span><span class="o">.</span><span class="n">db</span>
+<span class="n">mounted</span> <span class="n">at</span><span class="p">:</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">col</span><span class="o">-</span><span class="n">IqO2UD</span>
+<span class="n">project</span> <span class="nb">dir</span><span class="p">:</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pd</span><span class="o">-</span><span class="n">m6lRH4</span>
+</pre></div>
+</div>
+<p>The test will then wait for a newline character on STDIN. This allows you to inspect the various aspects of the
+temporary filesystem to debug what could be going wrong. If you’re on Linux, inspect will also open <code class="docutils literal notranslate"><span class="pre">sqlitebrowser</span></code>
+and a file browser.</p>
 </div>
 <div class="section" id="when-things-go-wrong">
 <h3>When things go wrong<a class="headerlink" href="#when-things-go-wrong" title="Permalink to this headline">¶</a></h3>

@@ -131,13 +131,14 @@ Yes!  Each file in the SuperTag overlay database is keyed off of (device_id, ino
 filesystems to one SuperTag mountpoint, and there is no chance for collision.
 
 
+.. _deleting_tags:
 
-Why can't I delete a tag or a tagged file from a file browser?
+Why can't I delete a tag from a file browser?
 ============================================================================
 
-I had to disable unlink and rmdir through the file browser because of delete behavior that can cause some files to be
+I had to disable rmdir through because of delete behavior that can cause some files to be
 untagged.  If you attempted to delete a top level tag directory through a file browser, the expected behavior
-would be to remove that tag from all files, and nothing else.  However, file browsers delete directories recursively,
+would be to remove that tag from all files, and nothing else.  However, many file browsers delete directories recursively,
 depth-first, which means that all of the tagged files inside all of the tag intersections underneath the tag you wish
 to delete, will also be deleted.  This behavior cannot be mitigated against, because SuperTag only sees individual delete
 requests, and does not see the overall recursive delete request initiating them.
