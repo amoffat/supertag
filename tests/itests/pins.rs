@@ -17,6 +17,7 @@
  */
 
 use super::{TestHelper, TestResult};
+use crate::common::OpMode;
 use std::collections::HashSet;
 use std::fs;
 
@@ -60,6 +61,28 @@ fn test_pin_no_double_tagdir() -> TestResult {
     th.ln(&["t1", "t2"])?;
 
     // check that there isn't both a pinned tagdir & and legitimate intersection tagdir
+    let mut seen = HashSet::new();
+    for entry_err in fs::read_dir(th.mountpoint_path(&["t1"]))? {
+        let entry = entry_err?;
+        if seen.contains(&entry.path()) {
+            panic!("Double entry");
+        }
+        seen.insert(entry.path());
+    }
+
+    Ok(())
+}
+
+#[test]
+fn test_multiple_nested_pins() -> TestResult {
+    let mut th = TestHelper::new(None);
+    th.mkdir_mode = OpMode::MANUAL;
+
+    // this will create 2 pin records:
+    // t1/t2/ and t1/t2/t3
+    th.mkdir("t1/t2/t3")?;
+
+    // check that t2 occurs under t1 only once
     let mut seen = HashSet::new();
     for entry_err in fs::read_dir(th.mountpoint_path(&["t1"]))? {
         let entry = entry_err?;

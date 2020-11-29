@@ -838,6 +838,7 @@ impl TestHelper {
         match self.mkdir_mode {
             OpMode::MANUAL => {
                 if !Command::new("mkdir")
+                    .arg("-p")
                     .arg(&tag_path)
                     .output()?
                     .status

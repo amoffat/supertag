@@ -319,6 +319,7 @@ where
                                     {
                                         None
                                     } else {
+                                        seen_tagdirs2.borrow_mut().insert(tag.id);
                                         let cache_entry =
                                             opcache::ReaddirCacheEntry::Tag(tag.clone());
                                         opcache2
