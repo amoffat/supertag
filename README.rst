@@ -15,6 +15,7 @@
 
 Supertag is a tag-based filesystem, written in Rust, for Linux and MacOS. It provides a tag-based view of your files by
 removing the hierarchy constraints typically imposed on files and folders.
+In other words, it allows you to think about your files not as objects stored in folders, but as objects that can be filtered by folders.
 
 .. image:: https://raw.githubusercontent.com/amoffat/supertag/master/images/intersection-opt.gif
     :alt: Intersection
