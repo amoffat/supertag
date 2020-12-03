@@ -218,8 +218,7 @@ a fresh Catalina without reboot. YMMV</p>
 <h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
 <p>The following <a class="reference external" href="https://appimage.org/">AppImage</a> works on all major Linux distributions:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -Ls https://github.com/amoffat/supertag/releases/latest/download/supertag-x86_64.AppImage &gt; tag
-sudo mv tag /usr/local/bin/tag
-sudo chmod +x /usr/local/bin/tag
+sudo install tag /usr/local/bin
 </pre></div>
 </div>
 </div>
@@ -257,7 +256,7 @@ Finally, you will need to reboot to enable the kernel extension, although I was 
 a fresh Catalina without reboot. YMMV</p>
 </div>
 <p>Now install all of the necessary dependencies listed in the official Supertag formula:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install --only-dependencies brew install amoffat/rnd/supertag
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install --only-dependencies amoffat/rnd/supertag
 </pre></div>
 </div>
 </div>
