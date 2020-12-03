@@ -29,8 +29,7 @@ Linux
 .. code-block:: bash
 
     curl -Ls https://github.com/amoffat/supertag/releases/latest/download/supertag-x86_64.AppImage > tag
-    sudo mv tag /usr/local/bin/tag
-    sudo chmod +x /usr/local/bin/tag
+    sudo install tag /usr/local/bin
 
 Mac
 ---
