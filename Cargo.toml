@@ -18,7 +18,7 @@ members = [".", "fuse-sys"]
 [dependencies]
 fuse-sys = { path = "./fuse-sys" }
 rusqlite = "0.24.1"
-nix = "0.15.0"
+nix = "0.19.1"
 libc = "0.2"
 clap = "2.33.3"
 directories = "3.0"
