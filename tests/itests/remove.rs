@@ -313,6 +313,9 @@ fn _test_remove_and_relink_tag(th: TestHelper) -> TestResult {
 
     th.rmdir(&["t1"])?;
 
+    // flaky test due to the opcache.rename_delete_cache
+    th.sleep(0.5);
+
     th.assert_parts_not_exists(&["t1"]);
 
     // bring back the t1 directory
