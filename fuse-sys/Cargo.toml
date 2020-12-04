@@ -14,7 +14,7 @@ categories = ["filesystem", "external-ffi-bindings", "os::unix-apis", "os::macos
 
 [dependencies]
 libc = "0.2"
-nix = "0.15.0"
+nix = "0.19.1"
 log = "0.4"
 chrono = "0.4"
 parking_lot = "0.11.0"
