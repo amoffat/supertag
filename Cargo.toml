@@ -1,6 +1,6 @@
 [package]
 name = "supertag"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Andrew Moffat <arwmoffat@gmail.com>"]
 edition = "2018"
 description = "Tag-based filesystem"
