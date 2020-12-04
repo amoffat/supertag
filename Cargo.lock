@@ -769,15 +769,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "opener"
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "13117407ca9d0caf3a0e74f97b490a7e64c0ae3aa90a8b7085544d0c37b6f3ae"
-dependencies = [
- "winapi",
-]
-
-[[package]]
 name = "parking_lot"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1251,7 +1242,6 @@ dependencies = [
  "metrohash",
  "nix",
  "notify-rust",
- "opener",
  "parking_lot",
  "rand",
  "regex",
