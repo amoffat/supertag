@@ -7,7 +7,7 @@
 .. image:: https://img.shields.io/travis/amoffat/supertag/master.svg?style=flat-square
     :target: https://travis-ci.org/amoffat/supertag
     :alt: Build Status
-.. image:: https://img.shields.io/badge/Documentation-v0.1.1-brightgreen?style=flat-square&logo=read-the-docs&logoColor=white&color=1a6cff
+.. image:: https://img.shields.io/badge/Documentation-v0.1.2-brightgreen?style=flat-square&logo=read-the-docs&logoColor=white&color=1a6cff
     :target: https://amoffat.github.io/supertag/
     :alt: Docs
 
@@ -29,8 +29,7 @@ Linux
 .. code-block:: bash
 
     curl -Ls https://github.com/amoffat/supertag/releases/latest/download/supertag-x86_64.AppImage > tag
-    sudo mv tag /usr/local/bin/tag
-    sudo chmod +x /usr/local/bin/tag
+    sudo install tag /usr/local/bin
 
 Mac
 ---

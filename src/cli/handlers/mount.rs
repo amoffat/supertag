@@ -72,7 +72,7 @@ pub fn handle(args: &ArgMatches, mut settings: Settings) -> Result<(), Box<dyn E
     if background {
         let conn_pool = ThreadConnPool::new(db_path.clone());
         debug!(target: TAG, "Forking into the background...");
-        match fork().expect("Fork failed") {
+        match unsafe{fork()}.expect("Fork failed") {
             ForkResult::Parent { child } => {
                 debug!(target: TAG, "Forked PID {}, now exiting", child);
                 println!("Forked into background PID {}", child);
