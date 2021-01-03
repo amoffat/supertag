@@ -37,3 +37,9 @@ Mac
 .. code-block:: bash
 
     brew install amoffat/rnd/supertag
+
+Related Projects
+============
+`TMSU <https://github.com/oniony/TMSU>`_: A mature tagging tool written in Go.
+
+`HyperTag <https://github.com/SeanPedersen/HyperTag>`_: A tiny tagging tool written in Python.
