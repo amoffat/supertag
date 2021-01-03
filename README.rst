@@ -7,7 +7,7 @@
 .. image:: https://img.shields.io/travis/amoffat/supertag/master.svg?style=flat-square
     :target: https://travis-ci.org/amoffat/supertag
     :alt: Build Status
-.. image:: https://img.shields.io/badge/Documentation-v0.1.3-brightgreen?style=flat-square&logo=read-the-docs&logoColor=white&color=1a6cff
+.. image:: https://img.shields.io/badge/Documentation-v0.1.4-brightgreen?style=flat-square&logo=read-the-docs&logoColor=white&color=1a6cff
     :target: https://amoffat.github.io/supertag/
     :alt: Docs
 

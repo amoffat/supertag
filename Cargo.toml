@@ -1,6 +1,6 @@
 [package]
 name = "supertag"
-version = "0.1.3"
+version = "0.1.4"
 authors = ["Andrew Moffat <arwmoffat@gmail.com>"]
 edition = "2018"
 description = "Tag-based filesystem"
@@ -23,7 +23,7 @@ libc = "0.2"
 clap = "2.33.3"
 directories = "3.0"
 config = "0.10.1"
-log = {version = "0.4", features = ["release_max_level_error"]}
+log = {version = "0.4", features = ["release_max_level_info"]}
 fern = "0.6"
 chrono = "0.4"
 signal-hook = "0.2.1"
