@@ -1,4 +1,4 @@
 #!/bin/bash
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH":"$APPDIR"/usr/lib
-exec "$APPDIR"/tag $@
+exec "$APPDIR"/tag "$@"
